@@ -1,0 +1,19 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+dont_use_io iocell 1 3
+set_location "\NP:Neo:EnablePulseWidthCounters\" macrocell 3 5 1 2
+set_location "\NP:Neo:DPTH:u0\" datapathcell 3 5 2 
+set_location "\NP:Neo:ONTime:Counter7\" count7cell 2 5 7 
+set_location "\NP:Neo:MainState_2\" macrocell 3 5 0 2
+set_location "Net_58" macrocell 3 5 1 3
+set_location "\NP:Neo:BITCNT:Counter7\" count7cell 3 4 7 
+set_location "\NP:Neo:MainState_1\" macrocell 3 5 1 0
+set_location "\NP:Neo:DPTH_select_2\" macrocell 3 5 0 3
+set_location "\NP:Neo:OFFTime:Counter7\" count7cell 3 5 7 
+set_location "\NP:Neo:MainState_0\" macrocell 3 5 0 0
+set_location "\NP:Neo:ReloadPulsewidthCounters\" macrocell 3 5 1 1
+set_location "\NP:Neo:CurrentBit\" macrocell 2 5 0 0
+set_location "\NP:Neo:LoadCounter\" macrocell 3 5 0 1
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "Data(0)" iocell 0 0
+set_location "\NP:DMA\" drqcell -1 -1 0

@@ -1,0 +1,409 @@
+--
+--	Conversion of NeoPixel.v to vh2:
+--
+--	Cypress Semiconductor - WARP Version 6.3 IR 41
+--	Wed Dec 02 09:54:05 2015
+--
+
+USE cypress.cypress.all;
+USE cypress.rtlpkg.all;
+ENTITY top_RTL IS
+ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
+END top_RTL;
+--------------------------------------------------------
+ARCHITECTURE R_T_L OF top_RTL IS
+SIGNAL tmpOE__Data_net_0 : bit;
+SIGNAL Net_58 : bit;
+SIGNAL tmpFB_0__Data_net_0 : bit;
+SIGNAL tmpIO_0__Data_net_0 : bit;
+TERMINAL tmpSIOVREF__Data_net_0 : bit;
+SIGNAL zero : bit;
+SIGNAL one : bit;
+SIGNAL tmpINTERRUPT_0__Data_net_0 : bit;
+SIGNAL Net_49 : bit;
+SIGNAL \NP:Neo:MainState_2\ : bit;
+SIGNAL \NP:Neo:MainState_1\ : bit;
+SIGNAL \NP:Neo:MainState_0\ : bit;
+SIGNAL \NP:Net_3\ : bit;
+SIGNAL \NP:Neo:SpaceForData\ : bit;
+SIGNAL \NP:Neo:LoadCounter\ : bit;
+SIGNAL \NP:Neo:EnableCounter\ : bit;
+SIGNAL \NP:Neo:TimerActive\ : bit;
+SIGNAL \NP:Neo:ReloadPulsewidthCounters\ : bit;
+SIGNAL \NP:Neo:Timeout\ : bit;
+SIGNAL \NP:Neo:ONTimeDone\ : bit;
+SIGNAL \NP:Neo:CurrentBit\ : bit;
+SIGNAL \NP:Neo:OFFTimeDone\ : bit;
+SIGNAL \NP:Neo:EnablePulseWidthCounters\ : bit;
+SIGNAL \NP:Neo:DPTH_d0_load\ : bit;
+SIGNAL \NP:Neo:DPTH_d1_load\ : bit;
+SIGNAL \NP:Neo:DPTH_f0_load\ : bit;
+SIGNAL \NP:Neo:DPTH_f1_load\ : bit;
+SIGNAL \NP:Neo:DPTH_route_si\ : bit;
+SIGNAL \NP:Neo:DPTH_route_ci\ : bit;
+SIGNAL \NP:Neo:DPTH_select_0\ : bit;
+SIGNAL \NP:Neo:DPTH_select_1\ : bit;
+SIGNAL \NP:Neo:DPTH_select_2\ : bit;
+SIGNAL \NP:Neo:BITCNT_en\ : bit;
+SIGNAL \NP:Neo:BITCNT_load\ : bit;
+SIGNAL \NP:Neo:BITCNT_reset\ : bit;
+SIGNAL \NP:Neo:ONTime_en\ : bit;
+SIGNAL \NP:Neo:ONTime_load\ : bit;
+SIGNAL \NP:Neo:ONTime_reset\ : bit;
+SIGNAL \NP:Neo:OFFTime_en\ : bit;
+SIGNAL \NP:Neo:OFFTime_load\ : bit;
+SIGNAL \NP:Neo:OFFTime_reset\ : bit;
+SIGNAL \NP:Neo:DPTH:ce0\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ce0\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cl0\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cl0\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:z0\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:z0\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ff0\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ff0\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ce1\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ce1\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cl1\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cl1\:SIGNAL IS 2;
+SIGNAL \NP:Neo:CycleTimeout\ : bit;
+SIGNAL \NP:Neo:DPTH:ff1\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ff1\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ov_msb\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:co_msb\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:co_msb\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cmsb\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cmsb\:SIGNAL IS 2;
+SIGNAL \NP:Neo:ShiftOut\ : bit;
+SIGNAL \NP:Neo:NoData\ : bit;
+SIGNAL \NP:Neo:DPTH:f1_bus_stat\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f1_bus_stat\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:f1_blk_stat\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f1_blk_stat\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ce0_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cl0_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:z0_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ff0_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ce1_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cl1_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:z1_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ff1_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:so_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:so_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:DPTH:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \NP:Neo:DPTH:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \NP:Neo:FinalBit\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_6\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_5\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_4\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_3\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_2\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_1\ : bit;
+SIGNAL \NP:Neo:BITCNT_count_0\ : bit;
+SIGNAL \NP:Neo:ONTime_count_6\ : bit;
+SIGNAL \NP:Neo:ONTime_count_5\ : bit;
+SIGNAL \NP:Neo:ONTime_count_4\ : bit;
+SIGNAL \NP:Neo:ONTime_count_3\ : bit;
+SIGNAL \NP:Neo:ONTime_count_2\ : bit;
+SIGNAL \NP:Neo:ONTime_count_1\ : bit;
+SIGNAL \NP:Neo:ONTime_count_0\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_6\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_5\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_4\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_3\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_2\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_1\ : bit;
+SIGNAL \NP:Neo:OFFTime_count_0\ : bit;
+SIGNAL \NP:Net_13\ : bit;
+SIGNAL \NP:Neo:MainState_2\\D\ : bit;
+SIGNAL \NP:Neo:MainState_1\\D\ : bit;
+SIGNAL \NP:Neo:MainState_0\\D\ : bit;
+SIGNAL \NP:Neo:CurrentBit\\D\ : bit;
+BEGIN
+
+zero <=  ('0') ;
+
+tmpOE__Data_net_0 <=  ('1') ;
+
+Net_58 <= ((not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_1\));
+
+\NP:Neo:LoadCounter\ <= ((not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\));
+
+\NP:Neo:ReloadPulsewidthCounters\ <= ((not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_2\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\));
+
+\NP:Neo:EnablePulseWidthCounters\ <= ((not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_2\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_1\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\));
+
+\NP:Neo:DPTH_select_2\ <= (\NP:Neo:MainState_1\
+	OR \NP:Neo:MainState_2\);
+
+\NP:Neo:MainState_2\\D\ <= ((not \NP:Neo:MainState_2\ and \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\ and \NP:Neo:CycleTimeout\));
+
+\NP:Neo:MainState_1\\D\ <= ((not \NP:Neo:MainState_2\ and not \NP:Neo:CycleTimeout\ and \NP:Neo:MainState_0\)
+	OR (not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and not \NP:Neo:FinalBit\ and \NP:Neo:MainState_2\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_1\));
+
+\NP:Neo:MainState_0\\D\ <= ((not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and not \NP:Neo:CurrentBit\ and \NP:Neo:MainState_1\ and \NP:Neo:OFFTimeDone\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_1\ and \NP:Neo:ONTimeDone\ and \NP:Neo:CurrentBit\)
+	OR (not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and not \NP:Neo:NoData\ and \NP:Neo:FinalBit\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:CycleTimeout\ and \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and not \NP:Neo:NoData\));
+
+\NP:Neo:CurrentBit\\D\ <= ((not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_2\ and \NP:Neo:ShiftOut\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\ and \NP:Neo:ShiftOut\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_0\ and \NP:Neo:CurrentBit\)
+	OR (\NP:Neo:MainState_2\ and \NP:Neo:MainState_0\ and \NP:Neo:CurrentBit\)
+	OR (\NP:Neo:MainState_1\ and \NP:Neo:CurrentBit\));
+
+Data:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(tmpOE__Data_net_0),
+		y=>Net_58,
+		fb=>(tmpFB_0__Data_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Data_net_0),
+		siovref=>(tmpSIOVREF__Data_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__Data_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__Data_net_0,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__Data_net_0);
+Clock_1:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"2a7014c5-2cde-45dd-9042-d5c4cf34ad7a",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"78125000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_49,
+		dig_domain_out=>open);
+\NP:Neo:DPTH:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000011110000000000001000000000000000100000000000000010110000000000001000000000101000000010000010100000001000011111111000000001111111111111111001000000000000000000000111100000001000000000000",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>zero,
+		clk=>Net_49,
+		cs_addr=>(\NP:Neo:DPTH_select_2\, \NP:Neo:MainState_1\, \NP:Neo:MainState_0\),
+		route_si=>zero,
+		route_ci=>zero,
+		f0_load=>zero,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>open,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>open,
+		z1=>\NP:Neo:CycleTimeout\,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>\NP:Neo:ShiftOut\,
+		f0_bus_stat=>\NP:Net_3\,
+		f0_blk_stat=>\NP:Neo:NoData\,
+		f1_bus_stat=>open,
+		f1_blk_stat=>open,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>open);
+\NP:Neo:BITCNT:Counter7\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"1111111",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'1',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>Net_49,
+		reset=>zero,
+		load=>\NP:Neo:LoadCounter\,
+		enable=>\NP:Neo:ReloadPulsewidthCounters\,
+		count=>(\NP:Neo:BITCNT_count_6\, \NP:Neo:BITCNT_count_5\, \NP:Neo:BITCNT_count_4\, \NP:Neo:BITCNT_count_3\,
+			\NP:Neo:BITCNT_count_2\, \NP:Neo:BITCNT_count_1\, \NP:Neo:BITCNT_count_0\),
+		tc=>\NP:Neo:FinalBit\);
+\NP:Neo:ONTime:Counter7\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"1111111",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'1',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>Net_49,
+		reset=>zero,
+		load=>\NP:Neo:ReloadPulsewidthCounters\,
+		enable=>\NP:Neo:EnablePulseWidthCounters\,
+		count=>(\NP:Neo:ONTime_count_6\, \NP:Neo:ONTime_count_5\, \NP:Neo:ONTime_count_4\, \NP:Neo:ONTime_count_3\,
+			\NP:Neo:ONTime_count_2\, \NP:Neo:ONTime_count_1\, \NP:Neo:ONTime_count_0\),
+		tc=>\NP:Neo:ONTimeDone\);
+\NP:Neo:OFFTime:Counter7\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"1111111",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'1',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>Net_49,
+		reset=>zero,
+		load=>\NP:Neo:ReloadPulsewidthCounters\,
+		enable=>\NP:Neo:EnablePulseWidthCounters\,
+		count=>(\NP:Neo:OFFTime_count_6\, \NP:Neo:OFFTime_count_5\, \NP:Neo:OFFTime_count_4\, \NP:Neo:OFFTime_count_3\,
+			\NP:Neo:OFFTime_count_2\, \NP:Neo:OFFTime_count_1\, \NP:Neo:OFFTime_count_0\),
+		tc=>\NP:Neo:OFFTimeDone\);
+\NP:DMA\:cy_dma_v1_0
+	GENERIC MAP(drq_type=>"01",
+		num_tds=>0)
+	PORT MAP(drq=>\NP:Net_3\,
+		trq=>zero,
+		nrq=>\NP:Net_13\);
+\NP:Neo:MainState_2\:cy_dff
+	PORT MAP(d=>\NP:Neo:MainState_2\\D\,
+		clk=>Net_49,
+		q=>\NP:Neo:MainState_2\);
+\NP:Neo:MainState_1\:cy_dff
+	PORT MAP(d=>\NP:Neo:MainState_1\\D\,
+		clk=>Net_49,
+		q=>\NP:Neo:MainState_1\);
+\NP:Neo:MainState_0\:cy_dff
+	PORT MAP(d=>\NP:Neo:MainState_0\\D\,
+		clk=>Net_49,
+		q=>\NP:Neo:MainState_0\);
+\NP:Neo:CurrentBit\:cy_dff
+	PORT MAP(d=>\NP:Neo:CurrentBit\\D\,
+		clk=>Net_49,
+		q=>\NP:Neo:CurrentBit\);
+
+END R_T_L;

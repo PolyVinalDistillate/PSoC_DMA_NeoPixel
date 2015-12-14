@@ -1,0 +1,1196 @@
+Loading plugins phase: Elapsed time ==> 0s.145ms
+Initializing data phase: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 0s.603ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.143ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -dcpsoc3 NeoPixel.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -dcpsoc3 NeoPixel.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   vlogfe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -dcpsoc3 -verilog NeoPixel.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Wed Dec 02 09:54:05 2015
+
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   vpp
+Options  :    -yv2 -q10 NeoPixel.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Wed Dec 02 09:54:05 2015
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Count7_v1_0\Count7_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'NeoPixel.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   tovif
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -dcpsoc3 -verilog NeoPixel.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Wed Dec 02 09:54:05 2015
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\codegentemp\NeoPixel.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\codegentemp\NeoPixel.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Count7_v1_0\Count7_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  NeoPixel.v
+Program  :   topld
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -dcpsoc3 -verilog NeoPixel.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Wed Dec 02 09:54:05 2015
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\codegentemp\NeoPixel.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\codegentemp\NeoPixel.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Count7_v1_0\Count7_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+
+
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing one to tmpOE__Data_net_0
+Aliasing \NP:Neo:DPTH_d0_load\ to zero
+Aliasing \NP:Neo:DPTH_d1_load\ to zero
+Aliasing \NP:Neo:DPTH_f0_load\ to zero
+Aliasing \NP:Neo:DPTH_f1_load\ to zero
+Aliasing \NP:Neo:DPTH_route_si\ to zero
+Aliasing \NP:Neo:DPTH_route_ci\ to zero
+Aliasing \NP:Neo:BITCNT_reset\ to zero
+Aliasing \NP:Neo:ONTime_reset\ to zero
+Aliasing \NP:Neo:OFFTime_en\ to \NP:Neo:ONTime_en\
+Aliasing \NP:Neo:OFFTime_load\ to \NP:Neo:ONTime_load\
+Aliasing \NP:Neo:OFFTime_reset\ to zero
+Removing Lhs of wire one[7] = tmpOE__Data_net_0[1]
+Removing Rhs of wire \NP:Net_3\[14] = \NP:Neo:SpaceForData\[15]
+Removing Lhs of wire \NP:Neo:DPTH_d0_load\[25] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_d1_load\[26] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_f0_load\[27] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_f1_load\[28] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_route_si\[29] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_route_ci\[30] = zero[6]
+Removing Lhs of wire \NP:Neo:DPTH_select_0\[31] = \NP:Neo:MainState_0\[13]
+Removing Lhs of wire \NP:Neo:DPTH_select_1\[32] = \NP:Neo:MainState_1\[12]
+Removing Lhs of wire \NP:Neo:BITCNT_load\[35] = \NP:Neo:LoadCounter\[16]
+Removing Lhs of wire \NP:Neo:BITCNT_reset\[36] = zero[6]
+Removing Lhs of wire \NP:Neo:ONTime_en\[37] = \NP:Neo:EnablePulseWidthCounters\[24]
+Removing Lhs of wire \NP:Neo:ONTime_load\[38] = \NP:Neo:ReloadPulsewidthCounters\[19]
+Removing Lhs of wire \NP:Neo:ONTime_reset\[39] = zero[6]
+Removing Lhs of wire \NP:Neo:OFFTime_en\[40] = \NP:Neo:EnablePulseWidthCounters\[24]
+Removing Lhs of wire \NP:Neo:OFFTime_load\[41] = \NP:Neo:ReloadPulsewidthCounters\[19]
+Removing Lhs of wire \NP:Neo:OFFTime_reset\[42] = zero[6]
+
+------------------------------------------------------
+Aliased 0 equations, 18 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+Note:  Expanding virtual equation for '\NP:Neo:LoadCounter\' (cost = 1):
+\NP:Neo:LoadCounter\ <= ((not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\));
+
+Note:  Expanding virtual equation for '\NP:Neo:EnableCounter\' (cost = 1):
+\NP:Neo:EnableCounter\ <= ((not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_2\));
+
+Note:  Expanding virtual equation for '\NP:Neo:TimerActive\' (cost = 1):
+\NP:Neo:TimerActive\ <= ((not \NP:Neo:MainState_2\ and \NP:Neo:MainState_1\));
+
+Note:  Expanding virtual equation for '\NP:Neo:ReloadPulsewidthCounters\' (cost = 2):
+\NP:Neo:ReloadPulsewidthCounters\ <= ((not \NP:Neo:MainState_1\ and not \NP:Neo:MainState_0\ and \NP:Neo:MainState_2\)
+	OR (not \NP:Neo:MainState_2\ and not \NP:Neo:MainState_1\ and \NP:Neo:MainState_0\));
+
+Note:  Expanding virtual equation for '\NP:Neo:Timeout\' (cost = 2):
+\NP:Neo:Timeout\ <= ((not \NP:Neo:CurrentBit\ and \NP:Neo:OFFTimeDone\)
+	OR (\NP:Neo:ONTimeDone\ and \NP:Neo:CurrentBit\));
+
+
+Substituting virtuals - pass 2:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 5 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing \NP:Neo:BITCNT_en\ to \NP:Neo:ReloadPulsewidthCounters\
+Removing Lhs of wire \NP:Neo:BITCNT_en\[34] = \NP:Neo:ReloadPulsewidthCounters\[19]
+
+------------------------------------------------------
+Aliased 0 equations, 1 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Eliminating unused logic - pass 1:
+
+
+Eliminating unused logic - pass 2:
+
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj" -dcpsoc3 NeoPixel.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 0s.297ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V3.3.0.410, Family: PSoC3, Started at: Wednesday, 02 December 2015 09:54:05
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nick\Documents\PSoC Creator\NeoPixel\NeoPixel.cydsn\NeoPixel.cyprj -d CY8C5888LTI-LP097 NeoPixel.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.007ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Digital Clock 0: Automatic-assigning  clock 'Clock_1'. Fanout=8, Signal=Net_49
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = Data(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Data(0)__PA ,
+            input => Net_58 ,
+            pad => Data(0)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=Net_58, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = Net_58 (fanout=1)
+
+    MacroCell: Name=\NP:Neo:LoadCounter\, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:LoadCounter\ (fanout=1)
+
+    MacroCell: Name=\NP:Neo:ReloadPulsewidthCounters\, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:ReloadPulsewidthCounters\ (fanout=3)
+
+    MacroCell: Name=\NP:Neo:EnablePulseWidthCounters\, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:EnablePulseWidthCounters\ (fanout=2)
+
+    MacroCell: Name=\NP:Neo:DPTH_select_2\, Mode=(Combinatorial)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\
+        );
+        Output = \NP:Neo:DPTH_select_2\ (fanout=1)
+
+    MacroCell: Name=\NP:Neo:MainState_2\, Mode=(D-Register)
+        Total # of inputs        : 4
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * \NP:Neo:CycleTimeout\
+        );
+        Output = \NP:Neo:MainState_2\ (fanout=9)
+
+    MacroCell: Name=\NP:Neo:MainState_1\, Mode=(D-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_0\ * 
+              !\NP:Neo:CycleTimeout\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:FinalBit\
+        );
+        Output = \NP:Neo:MainState_1\ (fanout=10)
+
+    MacroCell: Name=\NP:Neo:MainState_0\, Mode=(D-Register)
+        Total # of inputs        : 9
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:NoData\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * \NP:Neo:ONTimeDone\ * 
+              \NP:Neo:CurrentBit\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * 
+              \NP:Neo:OFFTimeDone\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * !\NP:Neo:CycleTimeout\
+            + !\NP:Neo:MainState_1\ * !\NP:Neo:MainState_0\ * 
+              !\NP:Neo:NoData\ * \NP:Neo:FinalBit\
+        );
+        Output = \NP:Neo:MainState_0\ (fanout=9)
+
+    MacroCell: Name=\NP:Neo:CurrentBit\, Mode=(T-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * \NP:Neo:ShiftOut\
+            + !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * \NP:Neo:CurrentBit\ * !\NP:Neo:ShiftOut\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * 
+              \NP:Neo:ShiftOut\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * \NP:Neo:CurrentBit\ * 
+              !\NP:Neo:ShiftOut\
+        );
+        Output = \NP:Neo:CurrentBit\ (fanout=2)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+
+    ------------------------------------------------------------
+    Datapath listing
+    ------------------------------------------------------------
+
+    datapathcell: Name =\NP:Neo:DPTH:u0\
+        PORT MAP (
+            clock => Net_49 ,
+            cs_addr_2 => \NP:Neo:DPTH_select_2\ ,
+            cs_addr_1 => \NP:Neo:MainState_1\ ,
+            cs_addr_0 => \NP:Neo:MainState_0\ ,
+            z1_comb => \NP:Neo:CycleTimeout\ ,
+            so_comb => \NP:Neo:ShiftOut\ ,
+            f0_bus_stat_comb => \NP:Net_3\ ,
+            f0_blk_stat_comb => \NP:Neo:NoData\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000000000000000000000011110000000000001000000000000000100000000000000010110000000000001000000000101000000010000010100000001000011111111000000001111111111111111001000000000000000000000111100000001000000000000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+
+    ------------------------------------------------------------
+    Count7 listing
+    ------------------------------------------------------------
+
+    count7cell: Name =\NP:Neo:BITCNT:Counter7\
+        PORT MAP (
+            clock => Net_49 ,
+            load => \NP:Neo:LoadCounter\ ,
+            enable => \NP:Neo:ReloadPulsewidthCounters\ ,
+            count_6 => \NP:Neo:BITCNT_count_6\ ,
+            count_5 => \NP:Neo:BITCNT_count_5\ ,
+            count_4 => \NP:Neo:BITCNT_count_4\ ,
+            count_3 => \NP:Neo:BITCNT_count_3\ ,
+            count_2 => \NP:Neo:BITCNT_count_2\ ,
+            count_1 => \NP:Neo:BITCNT_count_1\ ,
+            count_0 => \NP:Neo:BITCNT_count_0\ ,
+            tc => \NP:Neo:FinalBit\ );
+        Properties:
+        {
+            cy_alt_mode = 0
+            cy_init_value = "0000000"
+            cy_period = "1111111"
+            cy_route_en = 1
+            cy_route_ld = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    count7cell: Name =\NP:Neo:ONTime:Counter7\
+        PORT MAP (
+            clock => Net_49 ,
+            load => \NP:Neo:ReloadPulsewidthCounters\ ,
+            enable => \NP:Neo:EnablePulseWidthCounters\ ,
+            count_6 => \NP:Neo:ONTime_count_6\ ,
+            count_5 => \NP:Neo:ONTime_count_5\ ,
+            count_4 => \NP:Neo:ONTime_count_4\ ,
+            count_3 => \NP:Neo:ONTime_count_3\ ,
+            count_2 => \NP:Neo:ONTime_count_2\ ,
+            count_1 => \NP:Neo:ONTime_count_1\ ,
+            count_0 => \NP:Neo:ONTime_count_0\ ,
+            tc => \NP:Neo:ONTimeDone\ );
+        Properties:
+        {
+            cy_alt_mode = 0
+            cy_init_value = "0000000"
+            cy_period = "1111111"
+            cy_route_en = 1
+            cy_route_ld = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    count7cell: Name =\NP:Neo:OFFTime:Counter7\
+        PORT MAP (
+            clock => Net_49 ,
+            load => \NP:Neo:ReloadPulsewidthCounters\ ,
+            enable => \NP:Neo:EnablePulseWidthCounters\ ,
+            count_6 => \NP:Neo:OFFTime_count_6\ ,
+            count_5 => \NP:Neo:OFFTime_count_5\ ,
+            count_4 => \NP:Neo:OFFTime_count_4\ ,
+            count_3 => \NP:Neo:OFFTime_count_3\ ,
+            count_2 => \NP:Neo:OFFTime_count_2\ ,
+            count_1 => \NP:Neo:OFFTime_count_1\ ,
+            count_0 => \NP:Neo:OFFTime_count_0\ ,
+            tc => \NP:Neo:OFFTimeDone\ );
+        Properties:
+        {
+            cy_alt_mode = 0
+            cy_init_value = "0000000"
+            cy_period = "1111111"
+            cy_route_en = 1
+            cy_route_ld = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+
+    ------------------------------------------------------------
+    DRQ listing
+    ------------------------------------------------------------
+
+    drqcell: Name =\NP:DMA\
+        PORT MAP (
+            dmareq => \NP:Net_3\ ,
+            termin => zero ,
+            termout => \NP:Net_13\ );
+        Properties:
+        {
+            drq_type = "01"
+            num_tds = 0
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Digital Clocks                :    1 :    7 :    8 : 12.50 %
+Analog Clocks                 :    0 :    4 :    4 :  0.00 %
+CapSense Buffers              :    0 :    2 :    2 :  0.00 %
+Digital Filter Block          :    0 :    1 :    1 :  0.00 %
+Interrupts                    :    0 :   32 :   32 :  0.00 %
+IO                            :    4 :   44 :   48 :  8.33 %
+Segment LCD                   :    0 :    1 :    1 :  0.00 %
+CAN 2.0b                      :    0 :    1 :    1 :  0.00 %
+I2C                           :    0 :    1 :    1 :  0.00 %
+USB                           :    0 :    1 :    1 :  0.00 %
+DMA Channels                  :    1 :   23 :   24 :  4.17 %
+Timer                         :    0 :    4 :    4 :  0.00 %
+UDB                           :      :      :      :        
+  Macrocells                  :    9 :  183 :  192 :  4.69 %
+  Unique P-terms              :   16 :  368 :  384 :  4.17 %
+  Total P-terms               :   22 :      :      :        
+  Datapath Cells              :    1 :   23 :   24 :  4.17 %
+  Status Cells                :    3 :   21 :   24 : 12.50 %
+    Routed Count7 Load/Enable :    3 :      :      :        
+  Control Cells               :    3 :   21 :   24 : 12.50 %
+    Count7 Cells              :    3 :      :      :        
+Opamp                         :    0 :    4 :    4 :  0.00 %
+Comparator                    :    0 :    4 :    4 :  0.00 %
+Delta-Sigma ADC               :    0 :    1 :    1 :  0.00 %
+LPF                           :    0 :    2 :    2 :  0.00 %
+SAR ADC                       :    0 :    2 :    2 :  0.00 %
+Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
+DAC                           :      :      :      :        
+  VIDAC                       :    0 :    4 :    4 :  0.00 %
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.036ms
+Tech mapping phase: Elapsed time ==> 0s.099ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+Initial Analog Placement Results:
+IO_0@[IOP=(0)][IoId=(0)] : Data(0) (fixed)
+Analog Placement phase: Elapsed time ==> 0s.013ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+Analog Routing phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+}
+Map of item to net {
+}
+Mux Info {
+}
+Dump of CyP35AnalogRoutingResultsDB
+IsVddaHalfUsedForComp = False
+IsVddaHalfUsedForSar0 = False
+IsVddaHalfUsedForSar1 = False
+Analog Code Generation phase: Elapsed time ==> 0s.302ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2076: Total run-time: 0.5 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary" expanded>
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+                     PLDs :    3 :   45 :   48 :   6.25%
+
+<CYPRESSTAG name="PLD Statistics">
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            6.33
+                   Pterms :            5.67
+               Macrocells :            3.00
+</CYPRESSTAG>
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.008ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 40, final cost is 40 (0.00% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          3 :       4.67 :       3.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] is empty.
+UDB [UDB=(0,2)] is empty.
+UDB [UDB=(0,3)] is empty.
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] is empty.
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] is empty.
+UDB [UDB=(2,2)] is empty.
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] contents:
+LAB@[UDB=(2,5)][LB=0] #macrocells=1, #inputs=5, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\NP:Neo:CurrentBit\, Mode=(T-Register) @ [UDB=(2,5)][LB=0][MC=0]
+        Total # of inputs        : 5
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * \NP:Neo:ShiftOut\
+            + !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * \NP:Neo:CurrentBit\ * !\NP:Neo:ShiftOut\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * 
+              \NP:Neo:ShiftOut\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * \NP:Neo:CurrentBit\ * 
+              !\NP:Neo:ShiftOut\
+        );
+        Output = \NP:Neo:CurrentBit\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+count7cell: Name =\NP:Neo:ONTime:Counter7\
+    PORT MAP (
+        clock => Net_49 ,
+        load => \NP:Neo:ReloadPulsewidthCounters\ ,
+        enable => \NP:Neo:EnablePulseWidthCounters\ ,
+        count_6 => \NP:Neo:ONTime_count_6\ ,
+        count_5 => \NP:Neo:ONTime_count_5\ ,
+        count_4 => \NP:Neo:ONTime_count_4\ ,
+        count_3 => \NP:Neo:ONTime_count_3\ ,
+        count_2 => \NP:Neo:ONTime_count_2\ ,
+        count_1 => \NP:Neo:ONTime_count_1\ ,
+        count_0 => \NP:Neo:ONTime_count_0\ ,
+        tc => \NP:Neo:ONTimeDone\ );
+    Properties:
+    {
+        cy_alt_mode = 0
+        cy_init_value = "0000000"
+        cy_period = "1111111"
+        cy_route_en = 1
+        cy_route_ld = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] is empty.
+UDB [UDB=(3,2)] is empty.
+UDB [UDB=(3,3)] is empty.
+UDB [UDB=(3,4)] contents:
+count7cell: Name =\NP:Neo:BITCNT:Counter7\
+    PORT MAP (
+        clock => Net_49 ,
+        load => \NP:Neo:LoadCounter\ ,
+        enable => \NP:Neo:ReloadPulsewidthCounters\ ,
+        count_6 => \NP:Neo:BITCNT_count_6\ ,
+        count_5 => \NP:Neo:BITCNT_count_5\ ,
+        count_4 => \NP:Neo:BITCNT_count_4\ ,
+        count_3 => \NP:Neo:BITCNT_count_3\ ,
+        count_2 => \NP:Neo:BITCNT_count_2\ ,
+        count_1 => \NP:Neo:BITCNT_count_1\ ,
+        count_0 => \NP:Neo:BITCNT_count_0\ ,
+        tc => \NP:Neo:FinalBit\ );
+    Properties:
+    {
+        cy_alt_mode = 0
+        cy_init_value = "0000000"
+        cy_period = "1111111"
+        cy_route_en = 1
+        cy_route_ld = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(3,5)] contents:
+LAB@[UDB=(3,5)][LB=0] #macrocells=4, #inputs=9, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\NP:Neo:MainState_0\, Mode=(D-Register) @ [UDB=(3,5)][LB=0][MC=0]
+        Total # of inputs        : 9
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:NoData\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * \NP:Neo:ONTimeDone\ * 
+              \NP:Neo:CurrentBit\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:CurrentBit\ * 
+              \NP:Neo:OFFTimeDone\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * !\NP:Neo:CycleTimeout\
+            + !\NP:Neo:MainState_1\ * !\NP:Neo:MainState_0\ * 
+              !\NP:Neo:NoData\ * \NP:Neo:FinalBit\
+        );
+        Output = \NP:Neo:MainState_0\ (fanout=9)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\NP:Neo:LoadCounter\, Mode=(Combinatorial) @ [UDB=(3,5)][LB=0][MC=1]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:LoadCounter\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\NP:Neo:MainState_2\, Mode=(D-Register) @ [UDB=(3,5)][LB=0][MC=2]
+        Total # of inputs        : 4
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\ * \NP:Neo:CycleTimeout\
+        );
+        Output = \NP:Neo:MainState_2\ (fanout=9)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=\NP:Neo:DPTH_select_2\, Mode=(Combinatorial) @ [UDB=(3,5)][LB=0][MC=3]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\
+        );
+        Output = \NP:Neo:DPTH_select_2\ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(3,5)][LB=1] #macrocells=4, #inputs=5, #pterms=5
+{
+    [McSlotId=0]:     MacroCell: Name=\NP:Neo:MainState_1\, Mode=(D-Register) @ [UDB=(3,5)][LB=1][MC=0]
+        Total # of inputs        : 5
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (Net_49) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_0\ * 
+              !\NP:Neo:CycleTimeout\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\ * !\NP:Neo:FinalBit\
+        );
+        Output = \NP:Neo:MainState_1\ (fanout=10)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\NP:Neo:ReloadPulsewidthCounters\, Mode=(Combinatorial) @ [UDB=(3,5)][LB=1][MC=1]
+        Total # of inputs        : 3
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:ReloadPulsewidthCounters\ (fanout=6)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\NP:Neo:EnablePulseWidthCounters\, Mode=(Combinatorial) @ [UDB=(3,5)][LB=1][MC=2]
+        Total # of inputs        : 3
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              \NP:Neo:MainState_0\
+            + !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+            + \NP:Neo:MainState_2\ * !\NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = \NP:Neo:EnablePulseWidthCounters\ (fanout=4)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=Net_58, Mode=(Combinatorial) @ [UDB=(3,5)][LB=1][MC=3]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\NP:Neo:MainState_2\ * \NP:Neo:MainState_1\ * 
+              !\NP:Neo:MainState_0\
+        );
+        Output = Net_58 (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+datapathcell: Name =\NP:Neo:DPTH:u0\
+    PORT MAP (
+        clock => Net_49 ,
+        cs_addr_2 => \NP:Neo:DPTH_select_2\ ,
+        cs_addr_1 => \NP:Neo:MainState_1\ ,
+        cs_addr_0 => \NP:Neo:MainState_0\ ,
+        z1_comb => \NP:Neo:CycleTimeout\ ,
+        so_comb => \NP:Neo:ShiftOut\ ,
+        f0_bus_stat_comb => \NP:Net_3\ ,
+        f0_blk_stat_comb => \NP:Neo:NoData\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000000000000000000011110000000000001000000000000000100000000000000010110000000000001000000000101000000010000010100000001000011111111000000001111111111111111001000000000000000000000111100000001000000000000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+count7cell: Name =\NP:Neo:OFFTime:Counter7\
+    PORT MAP (
+        clock => Net_49 ,
+        load => \NP:Neo:ReloadPulsewidthCounters\ ,
+        enable => \NP:Neo:EnablePulseWidthCounters\ ,
+        count_6 => \NP:Neo:OFFTime_count_6\ ,
+        count_5 => \NP:Neo:OFFTime_count_5\ ,
+        count_4 => \NP:Neo:OFFTime_count_4\ ,
+        count_3 => \NP:Neo:OFFTime_count_3\ ,
+        count_2 => \NP:Neo:OFFTime_count_2\ ,
+        count_1 => \NP:Neo:OFFTime_count_1\ ,
+        count_0 => \NP:Neo:OFFTime_count_0\ ,
+        tc => \NP:Neo:OFFTimeDone\ );
+    Properties:
+    {
+        cy_alt_mode = 0
+        cy_init_value = "0000000"
+        cy_period = "1111111"
+        cy_route_en = 1
+        cy_route_ld = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+Intr container @ [IntrContainer=(0)]: empty
+Drq container @ [DrqContainer=(0)]: 
+  Dma@ [DrqContainer=(0)][DrqId=(0)] 
+    drqcell: Name =\NP:DMA\
+        PORT MAP (
+            dmareq => \NP:Net_3\ ,
+            termin => zero ,
+            termout => \NP:Net_13\ );
+        Properties:
+        {
+            drq_type = "01"
+            num_tds = 0
+        }
+Port 0 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = Data(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Data(0)__PA ,
+        input => Net_58 ,
+        pad => Data(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 1 is empty
+Port 2 is empty
+Port 3 is empty
+Port 12 is empty
+Port 15 is empty
+CAN 2.0b group 0: empty
+Cache group 0: empty
+CapSense group 0: empty
+Clock group 0: 
+    Clock Block @ F(Clock,0): 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            imo => ClockBlock_IMO ,
+            pllout => ClockBlock_PLL_OUT ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            xtal => ClockBlock_XTAL ,
+            clk_32k_xtal => ClockBlock_XTAL_32KHZ ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_bus_glb => ClockBlock_BUS_CLK ,
+            clk_bus => ClockBlock_BUS_CLK_local ,
+            dclk_glb_0 => Net_49 ,
+            dclk_0 => Net_49_local );
+        Properties:
+        {
+        }
+Comparator group 0: empty
+Digital Filter Block group 0: empty
+Delta-Sigma ADC group 0: empty
+Decimator group 0: empty
+EMIF group 0: empty
+I2C group 0: empty
+Segment LCD group 0: empty
+LVD group 0: empty
+PM group 0: empty
+Analog (SC/CT) Blocks group 0: empty
+SPC group 0: empty
+Timer group 0: empty
+USB group 0: empty
+VIDAC group 0: empty
+Opamp group 0: empty
+CapSense Buffers group 0: empty
+Vref group 0: empty
+LPF group 0: empty
+SAR ADC group 0: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |         | 
+Port | Pin | Fixed |      Type |       Drive Mode |    Name | Connections
+-----+-----+-------+-----------+------------------+---------+------------
+   0 |   0 |     * |      NONE |         CMOS_OUT | Data(0) | In(Net_58)
+-------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.001ms
+Digital Placement phase: Elapsed time ==> 0s.676ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+Routing successful.
+Digital Routing phase: Elapsed time ==> 0s.955ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 0s.125ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.027ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in NeoPixel_timing.html.
+Static timing analysis phase: Elapsed time ==> 0s.145ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.113ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 2s.475ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 2s.509ms
+API generation phase: Elapsed time ==> 0s.844ms
+Dependency generation phase: Elapsed time ==> 0s.004ms
+Cleanup phase: Elapsed time ==> 0s.000ms

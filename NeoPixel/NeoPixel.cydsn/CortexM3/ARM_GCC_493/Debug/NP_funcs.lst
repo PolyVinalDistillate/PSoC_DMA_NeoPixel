@@ -1,0 +1,1699 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"NP_funcs.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_ddiv
+  19              		.global	__aeabi_dcmpgt
+  20              		.global	__aeabi_d2uiz
+  21              		.section	.text.NP_Start,"ax",%progbits
+  22              		.align	2
+  23              		.global	NP_Start
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	NP_Start, %function
+  27              	NP_Start:
+  28              	.LFB0:
+  29              		.file 1 ".\\Generated_Source\\PSoC5\\NP_funcs.c"
+   1:.\Generated_Source\PSoC5/NP_funcs.c **** /* ========================================
+   2:.\Generated_Source\PSoC5/NP_funcs.c ****  *
+   3:.\Generated_Source\PSoC5/NP_funcs.c ****  * API function definitions for NeoPixel
+   4:.\Generated_Source\PSoC5/NP_funcs.c ****  * PSOC5 driver component.
+   5:.\Generated_Source\PSoC5/NP_funcs.c ****  * 
+   6:.\Generated_Source\PSoC5/NP_funcs.c ****  * Nick Burns (PolyVinalDistillate)
+   7:.\Generated_Source\PSoC5/NP_funcs.c ****  *
+   8:.\Generated_Source\PSoC5/NP_funcs.c ****  * ========================================
+   9:.\Generated_Source\PSoC5/NP_funcs.c **** */
+  10:.\Generated_Source\PSoC5/NP_funcs.c **** #include "NP_funcs.h"
+  11:.\Generated_Source\PSoC5/NP_funcs.c **** 
+  12:.\Generated_Source\PSoC5/NP_funcs.c **** volatile void* NP_Start(unsigned int nNumberOfNeopixels, void* pBuffer, double fSpeedMHz)
+  13:.\Generated_Source\PSoC5/NP_funcs.c **** {
+  30              		.loc 1 13 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              	.LVL0:
+  35 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+  36              		.cfi_def_cfa_offset 32
+  37              		.cfi_offset 4, -32
+  38              		.cfi_offset 5, -28
+  39              		.cfi_offset 6, -24
+  40              		.cfi_offset 7, -20
+  41              		.cfi_offset 8, -16
+  42              		.cfi_offset 9, -12
+  43              		.cfi_offset 10, -8
+  44              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 2
+
+
+  45 0004 0446     		mov	r4, r0
+  46 0006 8A46     		mov	r10, r1
+  14:.\Generated_Source\PSoC5/NP_funcs.c ****     //work out cycles required at specified clock speed...
+  15:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_g_pFrameBuffer = NULL;
+  47              		.loc 1 15 0
+  48 0008 0020     		movs	r0, #0
+  49              	.LVL1:
+  50 000a 3D49     		ldr	r1, .L8+24
+  51              	.LVL2:
+  52 000c 0860     		str	r0, [r1]
+  16:.\Generated_Source\PSoC5/NP_funcs.c ****     if((1.25/(1.0/(fSpeedMHz))) > 255) return NULL;
+  53              		.loc 1 16 0
+  54 000e 0020     		movs	r0, #0
+  55 0010 3C49     		ldr	r1, .L8+28
+  56 0012 FFF7FEFF 		bl	__aeabi_ddiv
+  57              	.LVL3:
+  58 0016 0646     		mov	r6, r0
+  59 0018 0F46     		mov	r7, r1
+  60 001a 0020     		movs	r0, #0
+  61 001c 3A49     		ldr	r1, .L8+32
+  62 001e 3246     		mov	r2, r6
+  63 0020 3B46     		mov	r3, r7
+  64 0022 FFF7FEFF 		bl	__aeabi_ddiv
+  65              	.LVL4:
+  66 0026 8046     		mov	r8, r0
+  67 0028 8946     		mov	r9, r1
+  68 002a 2FA3     		adr	r3, .L8
+  69 002c D3E90023 		ldrd	r2, [r3]
+  70 0030 FFF7FEFF 		bl	__aeabi_dcmpgt
+  71              	.LVL5:
+  72 0034 0028     		cmp	r0, #0
+  73 0036 54D1     		bne	.L6
+  17:.\Generated_Source\PSoC5/NP_funcs.c ****     
+  18:.\Generated_Source\PSoC5/NP_funcs.c ****     unsigned char fCyclesTotal = (unsigned char)(1.25/(1.0/(fSpeedMHz)));
+  74              		.loc 1 18 0
+  75 0038 4046     		mov	r0, r8
+  76 003a 4946     		mov	r1, r9
+  77 003c FFF7FEFF 		bl	__aeabi_d2uiz
+  78              	.LVL6:
+  79 0040 5FFA80F8 		uxtb	r8, r0
+  80              	.LVL7:
+  19:.\Generated_Source\PSoC5/NP_funcs.c ****     unsigned char fCyclesOn = (unsigned char)(0.7/(1.0/(fSpeedMHz)));
+  81              		.loc 1 19 0
+  82 0044 2AA1     		adr	r1, .L8+8
+  83 0046 D1E90001 		ldrd	r0, [r1]
+  84 004a 3246     		mov	r2, r6
+  85 004c 3B46     		mov	r3, r7
+  86 004e FFF7FEFF 		bl	__aeabi_ddiv
+  87              	.LVL8:
+  88 0052 FFF7FEFF 		bl	__aeabi_d2uiz
+  89              	.LVL9:
+  90 0056 C5B2     		uxtb	r5, r0
+  91              	.LVL10:
+  20:.\Generated_Source\PSoC5/NP_funcs.c ****     unsigned char fCyclesOff = (unsigned char)(0.35/(1.0/(fSpeedMHz)));
+  92              		.loc 1 20 0
+  93 0058 27A1     		adr	r1, .L8+16
+  94 005a D1E90001 		ldrd	r0, [r1]
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 3
+
+
+  95 005e 3246     		mov	r2, r6
+  96 0060 3B46     		mov	r3, r7
+  97 0062 FFF7FEFF 		bl	__aeabi_ddiv
+  98              	.LVL11:
+  99 0066 FFF7FEFF 		bl	__aeabi_d2uiz
+ 100              	.LVL12:
+ 101 006a C6B2     		uxtb	r6, r0
+ 102              	.LVL13:
+  21:.\Generated_Source\PSoC5/NP_funcs.c ****     
+  22:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_g_nFrameBufferSize = nNumberOfNeopixels*3;
+ 103              		.loc 1 22 0
+ 104 006c 04EB4404 		add	r4, r4, r4, lsl #1
+ 105              	.LVL14:
+ 106 0070 264B     		ldr	r3, .L8+36
+ 107 0072 1C60     		str	r4, [r3]
+  23:.\Generated_Source\PSoC5/NP_funcs.c ****     //Configure for 19.2 MHz operation
+  24:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_Neo_BITCNT_Start();        //Counts bits in a byte
+ 108              		.loc 1 24 0
+ 109 0074 FFF7FEFF 		bl	NP_Neo_BITCNT_Start
+ 110              	.LVL15:
+  25:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_Neo_ONTime_Start();        //Sets number of clocks for logic 1 pulse width
+ 111              		.loc 1 25 0
+ 112 0078 FFF7FEFF 		bl	NP_Neo_ONTime_Start
+ 113              	.LVL16:
+  26:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_Neo_OFFTime_Start();       //clocks for logic 0 pulse width
+ 114              		.loc 1 26 0
+ 115 007c FFF7FEFF 		bl	NP_Neo_OFFTime_Start
+ 116              	.LVL17:
+  27:.\Generated_Source\PSoC5/NP_funcs.c ****     //Sets bitrate frequency in number of clocks. Must be larger than largest of above two counter 
+  28:.\Generated_Source\PSoC5/NP_funcs.c ****     CY_SET_REG8(NP_Neo_DPTH_D1_PTR, fCyclesTotal);
+ 117              		.loc 1 28 0
+ 118 0080 234B     		ldr	r3, .L8+40
+ 119 0082 83F80080 		strb	r8, [r3]
+  29:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_Neo_OFFTime_WritePeriod(fCyclesOff-1);
+ 120              		.loc 1 29 0
+ 121 0086 701E     		subs	r0, r6, #1
+ 122 0088 C0B2     		uxtb	r0, r0
+ 123 008a FFF7FEFF 		bl	NP_Neo_OFFTime_WritePeriod
+ 124              	.LVL18:
+  30:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_Neo_ONTime_WritePeriod(fCyclesOn-1);
+ 125              		.loc 1 30 0
+ 126 008e 681E     		subs	r0, r5, #1
+ 127 0090 C0B2     		uxtb	r0, r0
+ 128 0092 FFF7FEFF 		bl	NP_Neo_ONTime_WritePeriod
+ 129              	.LVL19:
+  31:.\Generated_Source\PSoC5/NP_funcs.c ****     //Setup a DMA channel
+  32:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_g_nDMA_Chan = NP_DMA_DmaInitialize(NP_DMA_BYTES_PER_BURST, 
+ 130              		.loc 1 32 0
+ 131 0096 0120     		movs	r0, #1
+ 132 0098 0146     		mov	r1, r0
+ 133 009a 41F6FF72 		movw	r2, #8191
+ 134 009e 4FF48043 		mov	r3, #16384
+ 135 00a2 FFF7FEFF 		bl	NP_DMA_DmaInitialize
+ 136              	.LVL20:
+ 137 00a6 1B4B     		ldr	r3, .L8+44
+ 138 00a8 1870     		strb	r0, [r3]
+  33:.\Generated_Source\PSoC5/NP_funcs.c ****                                                         NP_DMA_REQUEST_PER_BURST, 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 4
+
+
+  34:.\Generated_Source\PSoC5/NP_funcs.c ****                                                         HI16(NP_DMA_SRC_BASE), 
+  35:.\Generated_Source\PSoC5/NP_funcs.c ****                                                         HI16(NP_DMA_DST_BASE));
+  36:.\Generated_Source\PSoC5/NP_funcs.c ****     
+  37:.\Generated_Source\PSoC5/NP_funcs.c ****     if(pBuffer == NULL)
+ 139              		.loc 1 37 0
+ 140 00aa BAF1000F 		cmp	r10, #0
+ 141 00ae 0ED1     		bne	.L3
+  38:.\Generated_Source\PSoC5/NP_funcs.c ****     {
+  39:.\Generated_Source\PSoC5/NP_funcs.c ****         NP_g_pFrameBuffer = malloc(nNumberOfNeopixels*3);
+ 142              		.loc 1 39 0
+ 143 00b0 2046     		mov	r0, r4
+ 144 00b2 FFF7FEFF 		bl	malloc
+ 145              	.LVL21:
+ 146 00b6 124B     		ldr	r3, .L8+24
+ 147 00b8 1860     		str	r0, [r3]
+  40:.\Generated_Source\PSoC5/NP_funcs.c ****         if(NP_g_pFrameBuffer != NULL)
+ 148              		.loc 1 40 0
+ 149 00ba 18B1     		cbz	r0, .L4
+  41:.\Generated_Source\PSoC5/NP_funcs.c ****         {
+  42:.\Generated_Source\PSoC5/NP_funcs.c ****             NP_g_bOwnsBuffer = 1;
+ 150              		.loc 1 42 0
+ 151 00bc 0122     		movs	r2, #1
+ 152 00be 164B     		ldr	r3, .L8+48
+ 153 00c0 1A70     		strb	r2, [r3]
+ 154 00c2 0AE0     		b	.L5
+ 155              	.L4:
+  43:.\Generated_Source\PSoC5/NP_funcs.c ****         }
+  44:.\Generated_Source\PSoC5/NP_funcs.c ****         else
+  45:.\Generated_Source\PSoC5/NP_funcs.c ****         {
+  46:.\Generated_Source\PSoC5/NP_funcs.c ****             NP_g_nFrameBufferSize = 0;
+ 156              		.loc 1 46 0
+ 157 00c4 0020     		movs	r0, #0
+ 158 00c6 114B     		ldr	r3, .L8+36
+ 159 00c8 1860     		str	r0, [r3]
+  47:.\Generated_Source\PSoC5/NP_funcs.c ****             return NULL;
+ 160              		.loc 1 47 0
+ 161 00ca BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 162              	.LVL22:
+ 163              	.L3:
+  48:.\Generated_Source\PSoC5/NP_funcs.c ****         }
+  49:.\Generated_Source\PSoC5/NP_funcs.c ****     }
+  50:.\Generated_Source\PSoC5/NP_funcs.c ****     else
+  51:.\Generated_Source\PSoC5/NP_funcs.c ****     {
+  52:.\Generated_Source\PSoC5/NP_funcs.c ****         NP_g_pFrameBuffer = pBuffer;
+ 164              		.loc 1 52 0
+ 165 00ce 0C4B     		ldr	r3, .L8+24
+ 166 00d0 C3F800A0 		str	r10, [r3]
+  53:.\Generated_Source\PSoC5/NP_funcs.c ****         NP_g_bOwnsBuffer = 0;
+ 167              		.loc 1 53 0
+ 168 00d4 0022     		movs	r2, #0
+ 169 00d6 104B     		ldr	r3, .L8+48
+ 170 00d8 1A70     		strb	r2, [r3]
+ 171              	.L5:
+  54:.\Generated_Source\PSoC5/NP_funcs.c ****     }
+  55:.\Generated_Source\PSoC5/NP_funcs.c ****     return NP_g_pFrameBuffer;
+ 172              		.loc 1 55 0
+ 173 00da 094B     		ldr	r3, .L8+24
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 5
+
+
+ 174 00dc 1868     		ldr	r0, [r3]
+ 175 00de BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 176              	.LVL23:
+ 177              	.L6:
+  16:.\Generated_Source\PSoC5/NP_funcs.c ****     
+ 178              		.loc 1 16 0
+ 179 00e2 0020     		movs	r0, #0
+  56:.\Generated_Source\PSoC5/NP_funcs.c **** }
+ 180              		.loc 1 56 0
+ 181 00e4 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 182              	.LVL24:
+ 183              	.L9:
+ 184              		.align	3
+ 185              	.L8:
+ 186 00e8 00000000 		.word	0
+ 187 00ec 00E06F40 		.word	1081073664
+ 188 00f0 66666666 		.word	1717986918
+ 189 00f4 6666E63F 		.word	1072064102
+ 190 00f8 66666666 		.word	1717986918
+ 191 00fc 6666D63F 		.word	1071015526
+ 192 0100 00000000 		.word	NP_g_pFrameBuffer
+ 193 0104 0000F03F 		.word	1072693248
+ 194 0108 0000F43F 		.word	1072955392
+ 195 010c 00000000 		.word	NP_g_nFrameBufferSize
+ 196 0110 31640040 		.word	1073767473
+ 197 0114 00000000 		.word	NP_g_nDMA_Chan
+ 198 0118 00000000 		.word	NP_g_bOwnsBuffer
+ 199              		.cfi_endproc
+ 200              	.LFE0:
+ 201              		.size	NP_Start, .-NP_Start
+ 202 011c AFF30080 		.section	.text.NP_Update,"ax",%progbits
+ 203              		.align	2
+ 204              		.global	NP_Update
+ 205              		.thumb
+ 206              		.thumb_func
+ 207              		.type	NP_Update, %function
+ 208              	NP_Update:
+ 209              	.LFB1:
+  57:.\Generated_Source\PSoC5/NP_funcs.c **** 
+  58:.\Generated_Source\PSoC5/NP_funcs.c **** //copy frame buffer to LEDs
+  59:.\Generated_Source\PSoC5/NP_funcs.c **** void NP_Update()
+  60:.\Generated_Source\PSoC5/NP_funcs.c **** {
+ 210              		.loc 1 60 0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 38B5     		push	{r3, r4, r5, lr}
+ 215              		.cfi_def_cfa_offset 16
+ 216              		.cfi_offset 3, -16
+ 217              		.cfi_offset 4, -12
+ 218              		.cfi_offset 5, -8
+ 219              		.cfi_offset 14, -4
+  61:.\Generated_Source\PSoC5/NP_funcs.c ****     if(NP_g_pFrameBuffer)
+ 220              		.loc 1 61 0
+ 221 0002 0F4B     		ldr	r3, .L13
+ 222 0004 1B68     		ldr	r3, [r3]
+ 223 0006 CBB1     		cbz	r3, .L10
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 6
+
+
+  62:.\Generated_Source\PSoC5/NP_funcs.c ****     {
+  63:.\Generated_Source\PSoC5/NP_funcs.c ****         NP_g_nDMA_TD = CyDmaTdAllocate();
+ 224              		.loc 1 63 0
+ 225 0008 FFF7FEFF 		bl	CyDmaTdAllocate
+ 226              	.LVL25:
+ 227 000c 0D4C     		ldr	r4, .L13+4
+ 228 000e 2070     		strb	r0, [r4]
+  64:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaTdSetConfiguration(NP_g_nDMA_TD, NP_g_nFrameBufferSize, CY_DMA_DISABLE_TD, TD_INC_SRC_
+ 229              		.loc 1 64 0
+ 230 0010 0D4B     		ldr	r3, .L13+8
+ 231 0012 1988     		ldrh	r1, [r3]
+ 232 0014 FE22     		movs	r2, #254
+ 233 0016 2123     		movs	r3, #33
+ 234 0018 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 235              	.LVL26:
+  65:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaTdSetAddress(NP_g_nDMA_TD, LO16((uint32)NP_g_pFrameBuffer), LO16((uint32)NP_Neo_DPTH_F
+ 236              		.loc 1 65 0
+ 237 001c 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 238 001e 084B     		ldr	r3, .L13
+ 239 0020 1988     		ldrh	r1, [r3]
+ 240 0022 46F24142 		movw	r2, #25665
+ 241 0026 FFF7FEFF 		bl	CyDmaTdSetAddress
+ 242              	.LVL27:
+  66:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaChSetInitialTd(NP_g_nDMA_Chan, NP_g_nDMA_TD);
+ 243              		.loc 1 66 0
+ 244 002a 084D     		ldr	r5, .L13+12
+ 245 002c 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 246 002e 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 247 0030 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 248              	.LVL28:
+  67:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaChEnable(NP_g_nDMA_Chan, 1);
+ 249              		.loc 1 67 0
+ 250 0034 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 251 0036 0121     		movs	r1, #1
+ 252 0038 FFF7FEFF 		bl	CyDmaChEnable
+ 253              	.LVL29:
+ 254              	.L10:
+ 255 003c 38BD     		pop	{r3, r4, r5, pc}
+ 256              	.L14:
+ 257 003e 00BF     		.align	2
+ 258              	.L13:
+ 259 0040 00000000 		.word	NP_g_pFrameBuffer
+ 260 0044 00000000 		.word	NP_g_nDMA_TD
+ 261 0048 00000000 		.word	NP_g_nFrameBufferSize
+ 262 004c 00000000 		.word	NP_g_nDMA_Chan
+ 263              		.cfi_endproc
+ 264              	.LFE1:
+ 265              		.size	NP_Update, .-NP_Update
+ 266              		.section	.text.NP_Stop,"ax",%progbits
+ 267              		.align	2
+ 268              		.global	NP_Stop
+ 269              		.thumb
+ 270              		.thumb_func
+ 271              		.type	NP_Stop, %function
+ 272              	NP_Stop:
+ 273              	.LFB2:
+  68:.\Generated_Source\PSoC5/NP_funcs.c ****     }
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 7
+
+
+  69:.\Generated_Source\PSoC5/NP_funcs.c **** }
+  70:.\Generated_Source\PSoC5/NP_funcs.c **** 
+  71:.\Generated_Source\PSoC5/NP_funcs.c **** void NP_Stop()
+  72:.\Generated_Source\PSoC5/NP_funcs.c **** {
+ 274              		.loc 1 72 0
+ 275              		.cfi_startproc
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278 0000 08B5     		push	{r3, lr}
+ 279              		.cfi_def_cfa_offset 8
+ 280              		.cfi_offset 3, -8
+ 281              		.cfi_offset 14, -4
+  73:.\Generated_Source\PSoC5/NP_funcs.c ****     if(NP_g_pFrameBuffer != NULL)
+ 282              		.loc 1 73 0
+ 283 0002 0B4B     		ldr	r3, .L18
+ 284 0004 1B68     		ldr	r3, [r3]
+ 285 0006 73B1     		cbz	r3, .L16
+  74:.\Generated_Source\PSoC5/NP_funcs.c ****     {
+  75:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaChFree(NP_g_nDMA_Chan);
+ 286              		.loc 1 75 0
+ 287 0008 0A4B     		ldr	r3, .L18+4
+ 288 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 289 000c FFF7FEFF 		bl	CyDmaChFree
+ 290              	.LVL30:
+  76:.\Generated_Source\PSoC5/NP_funcs.c ****         CyDmaTdFree(NP_g_nDMA_TD);
+ 291              		.loc 1 76 0
+ 292 0010 094B     		ldr	r3, .L18+8
+ 293 0012 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 294 0014 FFF7FEFF 		bl	CyDmaTdFree
+ 295              	.LVL31:
+  77:.\Generated_Source\PSoC5/NP_funcs.c ****         if(NP_g_bOwnsBuffer)
+ 296              		.loc 1 77 0
+ 297 0018 084B     		ldr	r3, .L18+12
+ 298 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 299 001c 1BB1     		cbz	r3, .L16
+  78:.\Generated_Source\PSoC5/NP_funcs.c ****             free((void*)NP_g_pFrameBuffer);
+ 300              		.loc 1 78 0
+ 301 001e 044B     		ldr	r3, .L18
+ 302 0020 1868     		ldr	r0, [r3]
+ 303 0022 FFF7FEFF 		bl	free
+ 304              	.LVL32:
+ 305              	.L16:
+  79:.\Generated_Source\PSoC5/NP_funcs.c ****     }
+  80:.\Generated_Source\PSoC5/NP_funcs.c ****     NP_g_pFrameBuffer = NULL;
+ 306              		.loc 1 80 0
+ 307 0026 0022     		movs	r2, #0
+ 308 0028 014B     		ldr	r3, .L18
+ 309 002a 1A60     		str	r2, [r3]
+ 310 002c 08BD     		pop	{r3, pc}
+ 311              	.L19:
+ 312 002e 00BF     		.align	2
+ 313              	.L18:
+ 314 0030 00000000 		.word	NP_g_pFrameBuffer
+ 315 0034 00000000 		.word	NP_g_nDMA_Chan
+ 316 0038 00000000 		.word	NP_g_nDMA_TD
+ 317 003c 00000000 		.word	NP_g_bOwnsBuffer
+ 318              		.cfi_endproc
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 8
+
+
+ 319              	.LFE2:
+ 320              		.size	NP_Stop, .-NP_Stop
+ 321              		.comm	NP_g_nFrameBufferSize,4,4
+ 322              		.comm	NP_g_pFrameBuffer,4,4
+ 323              		.comm	NP_g_bOwnsBuffer,1,1
+ 324              		.comm	NP_g_nDMA_TD,1,1
+ 325              		.comm	NP_g_nDMA_Chan,1,1
+ 326              		.comm	NP_g_nNumberOfPixels,4,4
+ 327              		.text
+ 328              	.Letext0:
+ 329              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 330              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 331              		.file 4 ".\\Generated_Source\\PSoC5\\NP_funcs.h"
+ 332              		.file 5 ".\\Generated_Source\\PSoC5\\NP_Neo_BITCNT.h"
+ 333              		.file 6 ".\\Generated_Source\\PSoC5\\NP_Neo_ONTime.h"
+ 334              		.file 7 ".\\Generated_Source\\PSoC5\\NP_Neo_OFFTime.h"
+ 335              		.file 8 ".\\Generated_Source\\PSoC5\\NP_DMA_DMA.h"
+ 336              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 337              		.file 10 "Generated_Source\\PSoC5/CYDMAC.H"
+ 338              		.section	.debug_info,"",%progbits
+ 339              	.Ldebug_info0:
+ 340 0000 EB030000 		.4byte	0x3eb
+ 341 0004 0400     		.2byte	0x4
+ 342 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 343 000a 04       		.byte	0x4
+ 344 000b 01       		.uleb128 0x1
+ 345 000c 20020000 		.4byte	.LASF46
+ 346 0010 01       		.byte	0x1
+ 347 0011 E5010000 		.4byte	.LASF47
+ 348 0015 10000000 		.4byte	.LASF48
+ 349 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 350 001d 00000000 		.4byte	0
+ 351 0021 00000000 		.4byte	.Ldebug_line0
+ 352 0025 02       		.uleb128 0x2
+ 353 0026 08       		.byte	0x8
+ 354 0027 04       		.byte	0x4
+ 355 0028 93010000 		.4byte	.LASF0
+ 356 002c 02       		.uleb128 0x2
+ 357 002d 01       		.byte	0x1
+ 358 002e 06       		.byte	0x6
+ 359 002f 62030000 		.4byte	.LASF1
+ 360 0033 02       		.uleb128 0x2
+ 361 0034 01       		.byte	0x1
+ 362 0035 08       		.byte	0x8
+ 363 0036 0A010000 		.4byte	.LASF2
+ 364 003a 02       		.uleb128 0x2
+ 365 003b 02       		.byte	0x2
+ 366 003c 05       		.byte	0x5
+ 367 003d 15030000 		.4byte	.LASF3
+ 368 0041 02       		.uleb128 0x2
+ 369 0042 02       		.byte	0x2
+ 370 0043 07       		.byte	0x7
+ 371 0044 7F000000 		.4byte	.LASF4
+ 372 0048 02       		.uleb128 0x2
+ 373 0049 04       		.byte	0x4
+ 374 004a 05       		.byte	0x5
+ 375 004b 3C030000 		.4byte	.LASF5
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 9
+
+
+ 376 004f 02       		.uleb128 0x2
+ 377 0050 04       		.byte	0x4
+ 378 0051 07       		.byte	0x7
+ 379 0052 47010000 		.4byte	.LASF6
+ 380 0056 02       		.uleb128 0x2
+ 381 0057 08       		.byte	0x8
+ 382 0058 05       		.byte	0x5
+ 383 0059 DF020000 		.4byte	.LASF7
+ 384 005d 02       		.uleb128 0x2
+ 385 005e 08       		.byte	0x8
+ 386 005f 07       		.byte	0x7
+ 387 0060 09020000 		.4byte	.LASF8
+ 388 0064 03       		.uleb128 0x3
+ 389 0065 04       		.byte	0x4
+ 390 0066 05       		.byte	0x5
+ 391 0067 696E7400 		.ascii	"int\000"
+ 392 006b 02       		.uleb128 0x2
+ 393 006c 04       		.byte	0x4
+ 394 006d 07       		.byte	0x7
+ 395 006e D8010000 		.4byte	.LASF9
+ 396 0072 04       		.uleb128 0x4
+ 397 0073 59010000 		.4byte	.LASF10
+ 398 0077 02       		.byte	0x2
+ 399 0078 C2       		.byte	0xc2
+ 400 0079 33000000 		.4byte	0x33
+ 401 007d 04       		.uleb128 0x4
+ 402 007e B5010000 		.4byte	.LASF11
+ 403 0082 02       		.byte	0x2
+ 404 0083 C3       		.byte	0xc3
+ 405 0084 41000000 		.4byte	0x41
+ 406 0088 04       		.uleb128 0x4
+ 407 0089 C5010000 		.4byte	.LASF12
+ 408 008d 02       		.byte	0x2
+ 409 008e C4       		.byte	0xc4
+ 410 008f 4F000000 		.4byte	0x4f
+ 411 0093 02       		.uleb128 0x2
+ 412 0094 04       		.byte	0x4
+ 413 0095 04       		.byte	0x4
+ 414 0096 FA000000 		.4byte	.LASF13
+ 415 009a 02       		.uleb128 0x2
+ 416 009b 01       		.byte	0x1
+ 417 009c 08       		.byte	0x8
+ 418 009d ED020000 		.4byte	.LASF14
+ 419 00a1 05       		.uleb128 0x5
+ 420 00a2 00000000 		.4byte	.LASF15
+ 421 00a6 02       		.byte	0x2
+ 422 00a7 6401     		.2byte	0x164
+ 423 00a9 4F000000 		.4byte	0x4f
+ 424 00ad 05       		.uleb128 0x5
+ 425 00ae 18010000 		.4byte	.LASF16
+ 426 00b2 02       		.byte	0x2
+ 427 00b3 6C01     		.2byte	0x16c
+ 428 00b5 B9000000 		.4byte	0xb9
+ 429 00b9 06       		.uleb128 0x6
+ 430 00ba 72000000 		.4byte	0x72
+ 431 00be 04       		.uleb128 0x4
+ 432 00bf 09000000 		.4byte	.LASF17
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 10
+
+
+ 433 00c3 03       		.byte	0x3
+ 434 00c4 D4       		.byte	0xd4
+ 435 00c5 6B000000 		.4byte	0x6b
+ 436 00c9 02       		.uleb128 0x2
+ 437 00ca 04       		.byte	0x4
+ 438 00cb 07       		.byte	0x7
+ 439 00cc D1020000 		.4byte	.LASF18
+ 440 00d0 07       		.uleb128 0x7
+ 441 00d1 04       		.byte	0x4
+ 442 00d2 08       		.uleb128 0x8
+ 443 00d3 BC010000 		.4byte	.LASF49
+ 444 00d7 01       		.byte	0x1
+ 445 00d8 0C       		.byte	0xc
+ 446 00d9 BF010000 		.4byte	0x1bf
+ 447 00dd 00000000 		.4byte	.LFB0
+ 448 00e1 1C010000 		.4byte	.LFE0-.LFB0
+ 449 00e5 01       		.uleb128 0x1
+ 450 00e6 9C       		.byte	0x9c
+ 451 00e7 BF010000 		.4byte	0x1bf
+ 452 00eb 09       		.uleb128 0x9
+ 453 00ec 45030000 		.4byte	.LASF19
+ 454 00f0 01       		.byte	0x1
+ 455 00f1 0C       		.byte	0xc
+ 456 00f2 6B000000 		.4byte	0x6b
+ 457 00f6 00000000 		.4byte	.LLST0
+ 458 00fa 09       		.uleb128 0x9
+ 459 00fb AE020000 		.4byte	.LASF20
+ 460 00ff 01       		.byte	0x1
+ 461 0100 0C       		.byte	0xc
+ 462 0101 D0000000 		.4byte	0xd0
+ 463 0105 45000000 		.4byte	.LLST1
+ 464 0109 09       		.uleb128 0x9
+ 465 010a 58030000 		.4byte	.LASF21
+ 466 010e 01       		.byte	0x1
+ 467 010f 0C       		.byte	0xc
+ 468 0110 25000000 		.4byte	0x25
+ 469 0114 71000000 		.4byte	.LLST2
+ 470 0118 0A       		.uleb128 0xa
+ 471 0119 75010000 		.4byte	.LASF22
+ 472 011d 01       		.byte	0x1
+ 473 011e 12       		.byte	0x12
+ 474 011f 33000000 		.4byte	0x33
+ 475 0123 99000000 		.4byte	.LLST3
+ 476 0127 0A       		.uleb128 0xa
+ 477 0128 D5000000 		.4byte	.LASF23
+ 478 012c 01       		.byte	0x1
+ 479 012d 13       		.byte	0x13
+ 480 012e 33000000 		.4byte	0x33
+ 481 0132 AC000000 		.4byte	.LLST4
+ 482 0136 0A       		.uleb128 0xa
+ 483 0137 EF000000 		.4byte	.LASF24
+ 484 013b 01       		.byte	0x1
+ 485 013c 14       		.byte	0x14
+ 486 013d 33000000 		.4byte	0x33
+ 487 0141 BF000000 		.4byte	.LLST5
+ 488 0145 0B       		.uleb128 0xb
+ 489 0146 78000000 		.4byte	.LVL15
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 11
+
+
+ 490 014a C9020000 		.4byte	0x2c9
+ 491 014e 0B       		.uleb128 0xb
+ 492 014f 7C000000 		.4byte	.LVL16
+ 493 0153 D0020000 		.4byte	0x2d0
+ 494 0157 0B       		.uleb128 0xb
+ 495 0158 80000000 		.4byte	.LVL17
+ 496 015c D7020000 		.4byte	0x2d7
+ 497 0160 0C       		.uleb128 0xc
+ 498 0161 8E000000 		.4byte	.LVL18
+ 499 0165 DE020000 		.4byte	0x2de
+ 500 0169 74010000 		.4byte	0x174
+ 501 016d 0D       		.uleb128 0xd
+ 502 016e 01       		.uleb128 0x1
+ 503 016f 50       		.byte	0x50
+ 504 0170 02       		.uleb128 0x2
+ 505 0171 76       		.byte	0x76
+ 506 0172 7F       		.sleb128 -1
+ 507 0173 00       		.byte	0
+ 508 0174 0C       		.uleb128 0xc
+ 509 0175 96000000 		.4byte	.LVL19
+ 510 0179 EF020000 		.4byte	0x2ef
+ 511 017d 88010000 		.4byte	0x188
+ 512 0181 0D       		.uleb128 0xd
+ 513 0182 01       		.uleb128 0x1
+ 514 0183 50       		.byte	0x50
+ 515 0184 02       		.uleb128 0x2
+ 516 0185 75       		.byte	0x75
+ 517 0186 7F       		.sleb128 -1
+ 518 0187 00       		.byte	0
+ 519 0188 0C       		.uleb128 0xc
+ 520 0189 A6000000 		.4byte	.LVL20
+ 521 018d 00030000 		.4byte	0x300
+ 522 0191 AE010000 		.4byte	0x1ae
+ 523 0195 0D       		.uleb128 0xd
+ 524 0196 01       		.uleb128 0x1
+ 525 0197 53       		.byte	0x53
+ 526 0198 03       		.uleb128 0x3
+ 527 0199 0A       		.byte	0xa
+ 528 019a 0040     		.2byte	0x4000
+ 529 019c 0D       		.uleb128 0xd
+ 530 019d 01       		.uleb128 0x1
+ 531 019e 52       		.byte	0x52
+ 532 019f 03       		.uleb128 0x3
+ 533 01a0 0A       		.byte	0xa
+ 534 01a1 FF1F     		.2byte	0x1fff
+ 535 01a3 0D       		.uleb128 0xd
+ 536 01a4 01       		.uleb128 0x1
+ 537 01a5 51       		.byte	0x51
+ 538 01a6 01       		.uleb128 0x1
+ 539 01a7 31       		.byte	0x31
+ 540 01a8 0D       		.uleb128 0xd
+ 541 01a9 01       		.uleb128 0x1
+ 542 01aa 50       		.byte	0x50
+ 543 01ab 01       		.uleb128 0x1
+ 544 01ac 31       		.byte	0x31
+ 545 01ad 00       		.byte	0
+ 546 01ae 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 12
+
+
+ 547 01af B6000000 		.4byte	.LVL21
+ 548 01b3 24030000 		.4byte	0x324
+ 549 01b7 0D       		.uleb128 0xd
+ 550 01b8 01       		.uleb128 0x1
+ 551 01b9 50       		.byte	0x50
+ 552 01ba 02       		.uleb128 0x2
+ 553 01bb 74       		.byte	0x74
+ 554 01bc 00       		.sleb128 0
+ 555 01bd 00       		.byte	0
+ 556 01be 00       		.byte	0
+ 557 01bf 0F       		.uleb128 0xf
+ 558 01c0 04       		.byte	0x4
+ 559 01c1 C5010000 		.4byte	0x1c5
+ 560 01c5 10       		.uleb128 0x10
+ 561 01c6 11       		.uleb128 0x11
+ 562 01c7 00010000 		.4byte	.LASF25
+ 563 01cb 01       		.byte	0x1
+ 564 01cc 3B       		.byte	0x3b
+ 565 01cd 00000000 		.4byte	.LFB1
+ 566 01d1 50000000 		.4byte	.LFE1-.LFB1
+ 567 01d5 01       		.uleb128 0x1
+ 568 01d6 9C       		.byte	0x9c
+ 569 01d7 2C020000 		.4byte	0x22c
+ 570 01db 0B       		.uleb128 0xb
+ 571 01dc 0C000000 		.4byte	.LVL25
+ 572 01e0 39030000 		.4byte	0x339
+ 573 01e4 0C       		.uleb128 0xc
+ 574 01e5 1C000000 		.4byte	.LVL26
+ 575 01e9 44030000 		.4byte	0x344
+ 576 01ed FE010000 		.4byte	0x1fe
+ 577 01f1 0D       		.uleb128 0xd
+ 578 01f2 01       		.uleb128 0x1
+ 579 01f3 53       		.byte	0x53
+ 580 01f4 02       		.uleb128 0x2
+ 581 01f5 08       		.byte	0x8
+ 582 01f6 21       		.byte	0x21
+ 583 01f7 0D       		.uleb128 0xd
+ 584 01f8 01       		.uleb128 0x1
+ 585 01f9 52       		.byte	0x52
+ 586 01fa 02       		.uleb128 0x2
+ 587 01fb 09       		.byte	0x9
+ 588 01fc FE       		.byte	0xfe
+ 589 01fd 00       		.byte	0
+ 590 01fe 0C       		.uleb128 0xc
+ 591 01ff 2A000000 		.4byte	.LVL27
+ 592 0203 68030000 		.4byte	0x368
+ 593 0207 13020000 		.4byte	0x213
+ 594 020b 0D       		.uleb128 0xd
+ 595 020c 01       		.uleb128 0x1
+ 596 020d 52       		.byte	0x52
+ 597 020e 03       		.uleb128 0x3
+ 598 020f 0A       		.byte	0xa
+ 599 0210 4164     		.2byte	0x6441
+ 600 0212 00       		.byte	0
+ 601 0213 0B       		.uleb128 0xb
+ 602 0214 34000000 		.4byte	.LVL28
+ 603 0218 87030000 		.4byte	0x387
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 13
+
+
+ 604 021c 0E       		.uleb128 0xe
+ 605 021d 3C000000 		.4byte	.LVL29
+ 606 0221 A1030000 		.4byte	0x3a1
+ 607 0225 0D       		.uleb128 0xd
+ 608 0226 01       		.uleb128 0x1
+ 609 0227 51       		.byte	0x51
+ 610 0228 01       		.uleb128 0x1
+ 611 0229 31       		.byte	0x31
+ 612 022a 00       		.byte	0
+ 613 022b 00       		.byte	0
+ 614 022c 11       		.uleb128 0x11
+ 615 022d 34030000 		.4byte	.LASF26
+ 616 0231 01       		.byte	0x1
+ 617 0232 47       		.byte	0x47
+ 618 0233 00000000 		.4byte	.LFB2
+ 619 0237 40000000 		.4byte	.LFE2-.LFB2
+ 620 023b 01       		.uleb128 0x1
+ 621 023c 9C       		.byte	0x9c
+ 622 023d 5D020000 		.4byte	0x25d
+ 623 0241 0B       		.uleb128 0xb
+ 624 0242 10000000 		.4byte	.LVL30
+ 625 0246 BB030000 		.4byte	0x3bb
+ 626 024a 0B       		.uleb128 0xb
+ 627 024b 18000000 		.4byte	.LVL31
+ 628 024f D0030000 		.4byte	0x3d0
+ 629 0253 0B       		.uleb128 0xb
+ 630 0254 26000000 		.4byte	.LVL32
+ 631 0258 E1030000 		.4byte	0x3e1
+ 632 025c 00       		.byte	0
+ 633 025d 12       		.uleb128 0x12
+ 634 025e 6E030000 		.4byte	.LASF27
+ 635 0262 04       		.byte	0x4
+ 636 0263 17       		.byte	0x17
+ 637 0264 6B000000 		.4byte	0x6b
+ 638 0268 05       		.uleb128 0x5
+ 639 0269 03       		.byte	0x3
+ 640 026a 00000000 		.4byte	NP_g_nNumberOfPixels
+ 641 026e 12       		.uleb128 0x12
+ 642 026f 06030000 		.4byte	.LASF28
+ 643 0273 04       		.byte	0x4
+ 644 0274 18       		.byte	0x18
+ 645 0275 72000000 		.4byte	0x72
+ 646 0279 05       		.uleb128 0x5
+ 647 027a 03       		.byte	0x3
+ 648 027b 00000000 		.4byte	NP_g_nDMA_Chan
+ 649 027f 12       		.uleb128 0x12
+ 650 0280 9A010000 		.4byte	.LASF29
+ 651 0284 04       		.byte	0x4
+ 652 0285 19       		.byte	0x19
+ 653 0286 72000000 		.4byte	0x72
+ 654 028a 05       		.uleb128 0x5
+ 655 028b 03       		.byte	0x3
+ 656 028c 00000000 		.4byte	NP_g_nDMA_TD
+ 657 0290 12       		.uleb128 0x12
+ 658 0291 82010000 		.4byte	.LASF30
+ 659 0295 04       		.byte	0x4
+ 660 0296 1A       		.byte	0x1a
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 14
+
+
+ 661 0297 72000000 		.4byte	0x72
+ 662 029b 05       		.uleb128 0x5
+ 663 029c 03       		.byte	0x3
+ 664 029d 00000000 		.4byte	NP_g_bOwnsBuffer
+ 665 02a1 12       		.uleb128 0x12
+ 666 02a2 1D010000 		.4byte	.LASF31
+ 667 02a6 04       		.byte	0x4
+ 668 02a7 1C       		.byte	0x1c
+ 669 02a8 B2020000 		.4byte	0x2b2
+ 670 02ac 05       		.uleb128 0x5
+ 671 02ad 03       		.byte	0x3
+ 672 02ae 00000000 		.4byte	NP_g_pFrameBuffer
+ 673 02b2 0F       		.uleb128 0xf
+ 674 02b3 04       		.byte	0x4
+ 675 02b4 B9000000 		.4byte	0xb9
+ 676 02b8 12       		.uleb128 0x12
+ 677 02b9 5F010000 		.4byte	.LASF32
+ 678 02bd 04       		.byte	0x4
+ 679 02be 1D       		.byte	0x1d
+ 680 02bf 6B000000 		.4byte	0x6b
+ 681 02c3 05       		.uleb128 0x5
+ 682 02c4 03       		.byte	0x3
+ 683 02c5 00000000 		.4byte	NP_g_nFrameBufferSize
+ 684 02c9 13       		.uleb128 0x13
+ 685 02ca 4D000000 		.4byte	.LASF33
+ 686 02ce 05       		.byte	0x5
+ 687 02cf 1E       		.byte	0x1e
+ 688 02d0 13       		.uleb128 0x13
+ 689 02d1 F2020000 		.4byte	.LASF34
+ 690 02d5 06       		.byte	0x6
+ 691 02d6 1E       		.byte	0x1e
+ 692 02d7 13       		.uleb128 0x13
+ 693 02d8 1F030000 		.4byte	.LASF35
+ 694 02dc 07       		.byte	0x7
+ 695 02dd 1E       		.byte	0x1e
+ 696 02de 14       		.uleb128 0x14
+ 697 02df B6020000 		.4byte	.LASF36
+ 698 02e3 07       		.byte	0x7
+ 699 02e4 22       		.byte	0x22
+ 700 02e5 EF020000 		.4byte	0x2ef
+ 701 02e9 15       		.uleb128 0x15
+ 702 02ea 72000000 		.4byte	0x72
+ 703 02ee 00       		.byte	0
+ 704 02ef 14       		.uleb128 0x14
+ 705 02f0 A6000000 		.4byte	.LASF37
+ 706 02f4 06       		.byte	0x6
+ 707 02f5 22       		.byte	0x22
+ 708 02f6 00030000 		.4byte	0x300
+ 709 02fa 15       		.uleb128 0x15
+ 710 02fb 72000000 		.4byte	0x72
+ 711 02ff 00       		.byte	0
+ 712 0300 16       		.uleb128 0x16
+ 713 0301 C0000000 		.4byte	.LASF38
+ 714 0305 08       		.byte	0x8
+ 715 0306 1E       		.byte	0x1e
+ 716 0307 72000000 		.4byte	0x72
+ 717 030b 24030000 		.4byte	0x324
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 15
+
+
+ 718 030f 15       		.uleb128 0x15
+ 719 0310 72000000 		.4byte	0x72
+ 720 0314 15       		.uleb128 0x15
+ 721 0315 72000000 		.4byte	0x72
+ 722 0319 15       		.uleb128 0x15
+ 723 031a 7D000000 		.4byte	0x7d
+ 724 031e 15       		.uleb128 0x15
+ 725 031f 7D000000 		.4byte	0x7d
+ 726 0323 00       		.byte	0
+ 727 0324 16       		.uleb128 0x16
+ 728 0325 83030000 		.4byte	.LASF39
+ 729 0329 09       		.byte	0x9
+ 730 032a 25       		.byte	0x25
+ 731 032b D0000000 		.4byte	0xd0
+ 732 032f 39030000 		.4byte	0x339
+ 733 0333 15       		.uleb128 0x15
+ 734 0334 BE000000 		.4byte	0xbe
+ 735 0338 00       		.byte	0
+ 736 0339 17       		.uleb128 0x17
+ 737 033a DF000000 		.4byte	.LASF50
+ 738 033e 0A       		.byte	0xa
+ 739 033f 39       		.byte	0x39
+ 740 0340 72000000 		.4byte	0x72
+ 741 0344 16       		.uleb128 0x16
+ 742 0345 2F010000 		.4byte	.LASF40
+ 743 0349 0A       		.byte	0xa
+ 744 034a 3C       		.byte	0x3c
+ 745 034b A1000000 		.4byte	0xa1
+ 746 034f 68030000 		.4byte	0x368
+ 747 0353 15       		.uleb128 0x15
+ 748 0354 72000000 		.4byte	0x72
+ 749 0358 15       		.uleb128 0x15
+ 750 0359 7D000000 		.4byte	0x7d
+ 751 035d 15       		.uleb128 0x15
+ 752 035e 72000000 		.4byte	0x72
+ 753 0362 15       		.uleb128 0x15
+ 754 0363 72000000 		.4byte	0x72
+ 755 0367 00       		.byte	0
+ 756 0368 16       		.uleb128 0x16
+ 757 0369 61000000 		.4byte	.LASF41
+ 758 036d 0A       		.byte	0xa
+ 759 036e 40       		.byte	0x40
+ 760 036f A1000000 		.4byte	0xa1
+ 761 0373 87030000 		.4byte	0x387
+ 762 0377 15       		.uleb128 0x15
+ 763 0378 72000000 		.4byte	0x72
+ 764 037c 15       		.uleb128 0x15
+ 765 037d 7D000000 		.4byte	0x7d
+ 766 0381 15       		.uleb128 0x15
+ 767 0382 7D000000 		.4byte	0x7d
+ 768 0386 00       		.byte	0
+ 769 0387 16       		.uleb128 0x16
+ 770 0388 92000000 		.4byte	.LASF42
+ 771 038c 0A       		.byte	0xa
+ 772 038d 30       		.byte	0x30
+ 773 038e A1000000 		.4byte	0xa1
+ 774 0392 A1030000 		.4byte	0x3a1
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 16
+
+
+ 775 0396 15       		.uleb128 0x15
+ 776 0397 72000000 		.4byte	0x72
+ 777 039b 15       		.uleb128 0x15
+ 778 039c 72000000 		.4byte	0x72
+ 779 03a0 00       		.byte	0
+ 780 03a1 16       		.uleb128 0x16
+ 781 03a2 A7010000 		.4byte	.LASF43
+ 782 03a6 0A       		.byte	0xa
+ 783 03a7 2A       		.byte	0x2a
+ 784 03a8 A1000000 		.4byte	0xa1
+ 785 03ac BB030000 		.4byte	0x3bb
+ 786 03b0 15       		.uleb128 0x15
+ 787 03b1 72000000 		.4byte	0x72
+ 788 03b5 15       		.uleb128 0x15
+ 789 03b6 72000000 		.4byte	0x72
+ 790 03ba 00       		.byte	0
+ 791 03bb 16       		.uleb128 0x16
+ 792 03bc 73000000 		.4byte	.LASF44
+ 793 03c0 0A       		.byte	0xa
+ 794 03c1 29       		.byte	0x29
+ 795 03c2 A1000000 		.4byte	0xa1
+ 796 03c6 D0030000 		.4byte	0x3d0
+ 797 03ca 15       		.uleb128 0x15
+ 798 03cb 72000000 		.4byte	0x72
+ 799 03cf 00       		.byte	0
+ 800 03d0 14       		.uleb128 0x14
+ 801 03d1 CC010000 		.4byte	.LASF45
+ 802 03d5 0A       		.byte	0xa
+ 803 03d6 3A       		.byte	0x3a
+ 804 03d7 E1030000 		.4byte	0x3e1
+ 805 03db 15       		.uleb128 0x15
+ 806 03dc 72000000 		.4byte	0x72
+ 807 03e0 00       		.byte	0
+ 808 03e1 18       		.uleb128 0x18
+ 809 03e2 DA020000 		.4byte	.LASF51
+ 810 03e6 09       		.byte	0x9
+ 811 03e7 2D       		.byte	0x2d
+ 812 03e8 15       		.uleb128 0x15
+ 813 03e9 D0000000 		.4byte	0xd0
+ 814 03ed 00       		.byte	0
+ 815 03ee 00       		.byte	0
+ 816              		.section	.debug_abbrev,"",%progbits
+ 817              	.Ldebug_abbrev0:
+ 818 0000 01       		.uleb128 0x1
+ 819 0001 11       		.uleb128 0x11
+ 820 0002 01       		.byte	0x1
+ 821 0003 25       		.uleb128 0x25
+ 822 0004 0E       		.uleb128 0xe
+ 823 0005 13       		.uleb128 0x13
+ 824 0006 0B       		.uleb128 0xb
+ 825 0007 03       		.uleb128 0x3
+ 826 0008 0E       		.uleb128 0xe
+ 827 0009 1B       		.uleb128 0x1b
+ 828 000a 0E       		.uleb128 0xe
+ 829 000b 55       		.uleb128 0x55
+ 830 000c 17       		.uleb128 0x17
+ 831 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 17
+
+
+ 832 000e 01       		.uleb128 0x1
+ 833 000f 10       		.uleb128 0x10
+ 834 0010 17       		.uleb128 0x17
+ 835 0011 00       		.byte	0
+ 836 0012 00       		.byte	0
+ 837 0013 02       		.uleb128 0x2
+ 838 0014 24       		.uleb128 0x24
+ 839 0015 00       		.byte	0
+ 840 0016 0B       		.uleb128 0xb
+ 841 0017 0B       		.uleb128 0xb
+ 842 0018 3E       		.uleb128 0x3e
+ 843 0019 0B       		.uleb128 0xb
+ 844 001a 03       		.uleb128 0x3
+ 845 001b 0E       		.uleb128 0xe
+ 846 001c 00       		.byte	0
+ 847 001d 00       		.byte	0
+ 848 001e 03       		.uleb128 0x3
+ 849 001f 24       		.uleb128 0x24
+ 850 0020 00       		.byte	0
+ 851 0021 0B       		.uleb128 0xb
+ 852 0022 0B       		.uleb128 0xb
+ 853 0023 3E       		.uleb128 0x3e
+ 854 0024 0B       		.uleb128 0xb
+ 855 0025 03       		.uleb128 0x3
+ 856 0026 08       		.uleb128 0x8
+ 857 0027 00       		.byte	0
+ 858 0028 00       		.byte	0
+ 859 0029 04       		.uleb128 0x4
+ 860 002a 16       		.uleb128 0x16
+ 861 002b 00       		.byte	0
+ 862 002c 03       		.uleb128 0x3
+ 863 002d 0E       		.uleb128 0xe
+ 864 002e 3A       		.uleb128 0x3a
+ 865 002f 0B       		.uleb128 0xb
+ 866 0030 3B       		.uleb128 0x3b
+ 867 0031 0B       		.uleb128 0xb
+ 868 0032 49       		.uleb128 0x49
+ 869 0033 13       		.uleb128 0x13
+ 870 0034 00       		.byte	0
+ 871 0035 00       		.byte	0
+ 872 0036 05       		.uleb128 0x5
+ 873 0037 16       		.uleb128 0x16
+ 874 0038 00       		.byte	0
+ 875 0039 03       		.uleb128 0x3
+ 876 003a 0E       		.uleb128 0xe
+ 877 003b 3A       		.uleb128 0x3a
+ 878 003c 0B       		.uleb128 0xb
+ 879 003d 3B       		.uleb128 0x3b
+ 880 003e 05       		.uleb128 0x5
+ 881 003f 49       		.uleb128 0x49
+ 882 0040 13       		.uleb128 0x13
+ 883 0041 00       		.byte	0
+ 884 0042 00       		.byte	0
+ 885 0043 06       		.uleb128 0x6
+ 886 0044 35       		.uleb128 0x35
+ 887 0045 00       		.byte	0
+ 888 0046 49       		.uleb128 0x49
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 18
+
+
+ 889 0047 13       		.uleb128 0x13
+ 890 0048 00       		.byte	0
+ 891 0049 00       		.byte	0
+ 892 004a 07       		.uleb128 0x7
+ 893 004b 0F       		.uleb128 0xf
+ 894 004c 00       		.byte	0
+ 895 004d 0B       		.uleb128 0xb
+ 896 004e 0B       		.uleb128 0xb
+ 897 004f 00       		.byte	0
+ 898 0050 00       		.byte	0
+ 899 0051 08       		.uleb128 0x8
+ 900 0052 2E       		.uleb128 0x2e
+ 901 0053 01       		.byte	0x1
+ 902 0054 3F       		.uleb128 0x3f
+ 903 0055 19       		.uleb128 0x19
+ 904 0056 03       		.uleb128 0x3
+ 905 0057 0E       		.uleb128 0xe
+ 906 0058 3A       		.uleb128 0x3a
+ 907 0059 0B       		.uleb128 0xb
+ 908 005a 3B       		.uleb128 0x3b
+ 909 005b 0B       		.uleb128 0xb
+ 910 005c 27       		.uleb128 0x27
+ 911 005d 19       		.uleb128 0x19
+ 912 005e 49       		.uleb128 0x49
+ 913 005f 13       		.uleb128 0x13
+ 914 0060 11       		.uleb128 0x11
+ 915 0061 01       		.uleb128 0x1
+ 916 0062 12       		.uleb128 0x12
+ 917 0063 06       		.uleb128 0x6
+ 918 0064 40       		.uleb128 0x40
+ 919 0065 18       		.uleb128 0x18
+ 920 0066 9642     		.uleb128 0x2116
+ 921 0068 19       		.uleb128 0x19
+ 922 0069 01       		.uleb128 0x1
+ 923 006a 13       		.uleb128 0x13
+ 924 006b 00       		.byte	0
+ 925 006c 00       		.byte	0
+ 926 006d 09       		.uleb128 0x9
+ 927 006e 05       		.uleb128 0x5
+ 928 006f 00       		.byte	0
+ 929 0070 03       		.uleb128 0x3
+ 930 0071 0E       		.uleb128 0xe
+ 931 0072 3A       		.uleb128 0x3a
+ 932 0073 0B       		.uleb128 0xb
+ 933 0074 3B       		.uleb128 0x3b
+ 934 0075 0B       		.uleb128 0xb
+ 935 0076 49       		.uleb128 0x49
+ 936 0077 13       		.uleb128 0x13
+ 937 0078 02       		.uleb128 0x2
+ 938 0079 17       		.uleb128 0x17
+ 939 007a 00       		.byte	0
+ 940 007b 00       		.byte	0
+ 941 007c 0A       		.uleb128 0xa
+ 942 007d 34       		.uleb128 0x34
+ 943 007e 00       		.byte	0
+ 944 007f 03       		.uleb128 0x3
+ 945 0080 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 19
+
+
+ 946 0081 3A       		.uleb128 0x3a
+ 947 0082 0B       		.uleb128 0xb
+ 948 0083 3B       		.uleb128 0x3b
+ 949 0084 0B       		.uleb128 0xb
+ 950 0085 49       		.uleb128 0x49
+ 951 0086 13       		.uleb128 0x13
+ 952 0087 02       		.uleb128 0x2
+ 953 0088 17       		.uleb128 0x17
+ 954 0089 00       		.byte	0
+ 955 008a 00       		.byte	0
+ 956 008b 0B       		.uleb128 0xb
+ 957 008c 898201   		.uleb128 0x4109
+ 958 008f 00       		.byte	0
+ 959 0090 11       		.uleb128 0x11
+ 960 0091 01       		.uleb128 0x1
+ 961 0092 31       		.uleb128 0x31
+ 962 0093 13       		.uleb128 0x13
+ 963 0094 00       		.byte	0
+ 964 0095 00       		.byte	0
+ 965 0096 0C       		.uleb128 0xc
+ 966 0097 898201   		.uleb128 0x4109
+ 967 009a 01       		.byte	0x1
+ 968 009b 11       		.uleb128 0x11
+ 969 009c 01       		.uleb128 0x1
+ 970 009d 31       		.uleb128 0x31
+ 971 009e 13       		.uleb128 0x13
+ 972 009f 01       		.uleb128 0x1
+ 973 00a0 13       		.uleb128 0x13
+ 974 00a1 00       		.byte	0
+ 975 00a2 00       		.byte	0
+ 976 00a3 0D       		.uleb128 0xd
+ 977 00a4 8A8201   		.uleb128 0x410a
+ 978 00a7 00       		.byte	0
+ 979 00a8 02       		.uleb128 0x2
+ 980 00a9 18       		.uleb128 0x18
+ 981 00aa 9142     		.uleb128 0x2111
+ 982 00ac 18       		.uleb128 0x18
+ 983 00ad 00       		.byte	0
+ 984 00ae 00       		.byte	0
+ 985 00af 0E       		.uleb128 0xe
+ 986 00b0 898201   		.uleb128 0x4109
+ 987 00b3 01       		.byte	0x1
+ 988 00b4 11       		.uleb128 0x11
+ 989 00b5 01       		.uleb128 0x1
+ 990 00b6 31       		.uleb128 0x31
+ 991 00b7 13       		.uleb128 0x13
+ 992 00b8 00       		.byte	0
+ 993 00b9 00       		.byte	0
+ 994 00ba 0F       		.uleb128 0xf
+ 995 00bb 0F       		.uleb128 0xf
+ 996 00bc 00       		.byte	0
+ 997 00bd 0B       		.uleb128 0xb
+ 998 00be 0B       		.uleb128 0xb
+ 999 00bf 49       		.uleb128 0x49
+ 1000 00c0 13       		.uleb128 0x13
+ 1001 00c1 00       		.byte	0
+ 1002 00c2 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 20
+
+
+ 1003 00c3 10       		.uleb128 0x10
+ 1004 00c4 35       		.uleb128 0x35
+ 1005 00c5 00       		.byte	0
+ 1006 00c6 00       		.byte	0
+ 1007 00c7 00       		.byte	0
+ 1008 00c8 11       		.uleb128 0x11
+ 1009 00c9 2E       		.uleb128 0x2e
+ 1010 00ca 01       		.byte	0x1
+ 1011 00cb 3F       		.uleb128 0x3f
+ 1012 00cc 19       		.uleb128 0x19
+ 1013 00cd 03       		.uleb128 0x3
+ 1014 00ce 0E       		.uleb128 0xe
+ 1015 00cf 3A       		.uleb128 0x3a
+ 1016 00d0 0B       		.uleb128 0xb
+ 1017 00d1 3B       		.uleb128 0x3b
+ 1018 00d2 0B       		.uleb128 0xb
+ 1019 00d3 11       		.uleb128 0x11
+ 1020 00d4 01       		.uleb128 0x1
+ 1021 00d5 12       		.uleb128 0x12
+ 1022 00d6 06       		.uleb128 0x6
+ 1023 00d7 40       		.uleb128 0x40
+ 1024 00d8 18       		.uleb128 0x18
+ 1025 00d9 9742     		.uleb128 0x2117
+ 1026 00db 19       		.uleb128 0x19
+ 1027 00dc 01       		.uleb128 0x1
+ 1028 00dd 13       		.uleb128 0x13
+ 1029 00de 00       		.byte	0
+ 1030 00df 00       		.byte	0
+ 1031 00e0 12       		.uleb128 0x12
+ 1032 00e1 34       		.uleb128 0x34
+ 1033 00e2 00       		.byte	0
+ 1034 00e3 03       		.uleb128 0x3
+ 1035 00e4 0E       		.uleb128 0xe
+ 1036 00e5 3A       		.uleb128 0x3a
+ 1037 00e6 0B       		.uleb128 0xb
+ 1038 00e7 3B       		.uleb128 0x3b
+ 1039 00e8 0B       		.uleb128 0xb
+ 1040 00e9 49       		.uleb128 0x49
+ 1041 00ea 13       		.uleb128 0x13
+ 1042 00eb 3F       		.uleb128 0x3f
+ 1043 00ec 19       		.uleb128 0x19
+ 1044 00ed 02       		.uleb128 0x2
+ 1045 00ee 18       		.uleb128 0x18
+ 1046 00ef 00       		.byte	0
+ 1047 00f0 00       		.byte	0
+ 1048 00f1 13       		.uleb128 0x13
+ 1049 00f2 2E       		.uleb128 0x2e
+ 1050 00f3 00       		.byte	0
+ 1051 00f4 3F       		.uleb128 0x3f
+ 1052 00f5 19       		.uleb128 0x19
+ 1053 00f6 03       		.uleb128 0x3
+ 1054 00f7 0E       		.uleb128 0xe
+ 1055 00f8 3A       		.uleb128 0x3a
+ 1056 00f9 0B       		.uleb128 0xb
+ 1057 00fa 3B       		.uleb128 0x3b
+ 1058 00fb 0B       		.uleb128 0xb
+ 1059 00fc 27       		.uleb128 0x27
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 21
+
+
+ 1060 00fd 19       		.uleb128 0x19
+ 1061 00fe 3C       		.uleb128 0x3c
+ 1062 00ff 19       		.uleb128 0x19
+ 1063 0100 00       		.byte	0
+ 1064 0101 00       		.byte	0
+ 1065 0102 14       		.uleb128 0x14
+ 1066 0103 2E       		.uleb128 0x2e
+ 1067 0104 01       		.byte	0x1
+ 1068 0105 3F       		.uleb128 0x3f
+ 1069 0106 19       		.uleb128 0x19
+ 1070 0107 03       		.uleb128 0x3
+ 1071 0108 0E       		.uleb128 0xe
+ 1072 0109 3A       		.uleb128 0x3a
+ 1073 010a 0B       		.uleb128 0xb
+ 1074 010b 3B       		.uleb128 0x3b
+ 1075 010c 0B       		.uleb128 0xb
+ 1076 010d 27       		.uleb128 0x27
+ 1077 010e 19       		.uleb128 0x19
+ 1078 010f 3C       		.uleb128 0x3c
+ 1079 0110 19       		.uleb128 0x19
+ 1080 0111 01       		.uleb128 0x1
+ 1081 0112 13       		.uleb128 0x13
+ 1082 0113 00       		.byte	0
+ 1083 0114 00       		.byte	0
+ 1084 0115 15       		.uleb128 0x15
+ 1085 0116 05       		.uleb128 0x5
+ 1086 0117 00       		.byte	0
+ 1087 0118 49       		.uleb128 0x49
+ 1088 0119 13       		.uleb128 0x13
+ 1089 011a 00       		.byte	0
+ 1090 011b 00       		.byte	0
+ 1091 011c 16       		.uleb128 0x16
+ 1092 011d 2E       		.uleb128 0x2e
+ 1093 011e 01       		.byte	0x1
+ 1094 011f 3F       		.uleb128 0x3f
+ 1095 0120 19       		.uleb128 0x19
+ 1096 0121 03       		.uleb128 0x3
+ 1097 0122 0E       		.uleb128 0xe
+ 1098 0123 3A       		.uleb128 0x3a
+ 1099 0124 0B       		.uleb128 0xb
+ 1100 0125 3B       		.uleb128 0x3b
+ 1101 0126 0B       		.uleb128 0xb
+ 1102 0127 27       		.uleb128 0x27
+ 1103 0128 19       		.uleb128 0x19
+ 1104 0129 49       		.uleb128 0x49
+ 1105 012a 13       		.uleb128 0x13
+ 1106 012b 3C       		.uleb128 0x3c
+ 1107 012c 19       		.uleb128 0x19
+ 1108 012d 01       		.uleb128 0x1
+ 1109 012e 13       		.uleb128 0x13
+ 1110 012f 00       		.byte	0
+ 1111 0130 00       		.byte	0
+ 1112 0131 17       		.uleb128 0x17
+ 1113 0132 2E       		.uleb128 0x2e
+ 1114 0133 00       		.byte	0
+ 1115 0134 3F       		.uleb128 0x3f
+ 1116 0135 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 22
+
+
+ 1117 0136 03       		.uleb128 0x3
+ 1118 0137 0E       		.uleb128 0xe
+ 1119 0138 3A       		.uleb128 0x3a
+ 1120 0139 0B       		.uleb128 0xb
+ 1121 013a 3B       		.uleb128 0x3b
+ 1122 013b 0B       		.uleb128 0xb
+ 1123 013c 27       		.uleb128 0x27
+ 1124 013d 19       		.uleb128 0x19
+ 1125 013e 49       		.uleb128 0x49
+ 1126 013f 13       		.uleb128 0x13
+ 1127 0140 3C       		.uleb128 0x3c
+ 1128 0141 19       		.uleb128 0x19
+ 1129 0142 00       		.byte	0
+ 1130 0143 00       		.byte	0
+ 1131 0144 18       		.uleb128 0x18
+ 1132 0145 2E       		.uleb128 0x2e
+ 1133 0146 01       		.byte	0x1
+ 1134 0147 3F       		.uleb128 0x3f
+ 1135 0148 19       		.uleb128 0x19
+ 1136 0149 03       		.uleb128 0x3
+ 1137 014a 0E       		.uleb128 0xe
+ 1138 014b 3A       		.uleb128 0x3a
+ 1139 014c 0B       		.uleb128 0xb
+ 1140 014d 3B       		.uleb128 0x3b
+ 1141 014e 0B       		.uleb128 0xb
+ 1142 014f 27       		.uleb128 0x27
+ 1143 0150 19       		.uleb128 0x19
+ 1144 0151 3C       		.uleb128 0x3c
+ 1145 0152 19       		.uleb128 0x19
+ 1146 0153 00       		.byte	0
+ 1147 0154 00       		.byte	0
+ 1148 0155 00       		.byte	0
+ 1149              		.section	.debug_loc,"",%progbits
+ 1150              	.Ldebug_loc0:
+ 1151              	.LLST0:
+ 1152 0000 00000000 		.4byte	.LVL0
+ 1153 0004 0A000000 		.4byte	.LVL1
+ 1154 0008 0100     		.2byte	0x1
+ 1155 000a 50       		.byte	0x50
+ 1156 000b 0A000000 		.4byte	.LVL1
+ 1157 000f 70000000 		.4byte	.LVL14
+ 1158 0013 0100     		.2byte	0x1
+ 1159 0015 54       		.byte	0x54
+ 1160 0016 70000000 		.4byte	.LVL14
+ 1161 001a E2000000 		.4byte	.LVL23
+ 1162 001e 0400     		.2byte	0x4
+ 1163 0020 F3       		.byte	0xf3
+ 1164 0021 01       		.uleb128 0x1
+ 1165 0022 50       		.byte	0x50
+ 1166 0023 9F       		.byte	0x9f
+ 1167 0024 E2000000 		.4byte	.LVL23
+ 1168 0028 E8000000 		.4byte	.LVL24
+ 1169 002c 0100     		.2byte	0x1
+ 1170 002e 54       		.byte	0x54
+ 1171 002f E8000000 		.4byte	.LVL24
+ 1172 0033 1C010000 		.4byte	.LFE0
+ 1173 0037 0400     		.2byte	0x4
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 23
+
+
+ 1174 0039 F3       		.byte	0xf3
+ 1175 003a 01       		.uleb128 0x1
+ 1176 003b 50       		.byte	0x50
+ 1177 003c 9F       		.byte	0x9f
+ 1178 003d 00000000 		.4byte	0
+ 1179 0041 00000000 		.4byte	0
+ 1180              	.LLST1:
+ 1181 0045 00000000 		.4byte	.LVL0
+ 1182 0049 0C000000 		.4byte	.LVL2
+ 1183 004d 0100     		.2byte	0x1
+ 1184 004f 51       		.byte	0x51
+ 1185 0050 0C000000 		.4byte	.LVL2
+ 1186 0054 E8000000 		.4byte	.LVL24
+ 1187 0058 0100     		.2byte	0x1
+ 1188 005a 5A       		.byte	0x5a
+ 1189 005b E8000000 		.4byte	.LVL24
+ 1190 005f 1C010000 		.4byte	.LFE0
+ 1191 0063 0400     		.2byte	0x4
+ 1192 0065 F3       		.byte	0xf3
+ 1193 0066 01       		.uleb128 0x1
+ 1194 0067 51       		.byte	0x51
+ 1195 0068 9F       		.byte	0x9f
+ 1196 0069 00000000 		.4byte	0
+ 1197 006d 00000000 		.4byte	0
+ 1198              	.LLST2:
+ 1199 0071 00000000 		.4byte	.LVL0
+ 1200 0075 15000000 		.4byte	.LVL3-1
+ 1201 0079 0600     		.2byte	0x6
+ 1202 007b 52       		.byte	0x52
+ 1203 007c 93       		.byte	0x93
+ 1204 007d 04       		.uleb128 0x4
+ 1205 007e 53       		.byte	0x53
+ 1206 007f 93       		.byte	0x93
+ 1207 0080 04       		.uleb128 0x4
+ 1208 0081 15000000 		.4byte	.LVL3-1
+ 1209 0085 1C010000 		.4byte	.LFE0
+ 1210 0089 0600     		.2byte	0x6
+ 1211 008b F3       		.byte	0xf3
+ 1212 008c 03       		.uleb128 0x3
+ 1213 008d F5       		.byte	0xf5
+ 1214 008e 02       		.uleb128 0x2
+ 1215 008f 25       		.uleb128 0x25
+ 1216 0090 9F       		.byte	0x9f
+ 1217 0091 00000000 		.4byte	0
+ 1218 0095 00000000 		.4byte	0
+ 1219              	.LLST3:
+ 1220 0099 44000000 		.4byte	.LVL7
+ 1221 009d E2000000 		.4byte	.LVL23
+ 1222 00a1 0100     		.2byte	0x1
+ 1223 00a3 58       		.byte	0x58
+ 1224 00a4 00000000 		.4byte	0
+ 1225 00a8 00000000 		.4byte	0
+ 1226              	.LLST4:
+ 1227 00ac 58000000 		.4byte	.LVL10
+ 1228 00b0 E2000000 		.4byte	.LVL23
+ 1229 00b4 0100     		.2byte	0x1
+ 1230 00b6 55       		.byte	0x55
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 24
+
+
+ 1231 00b7 00000000 		.4byte	0
+ 1232 00bb 00000000 		.4byte	0
+ 1233              	.LLST5:
+ 1234 00bf 6C000000 		.4byte	.LVL13
+ 1235 00c3 E2000000 		.4byte	.LVL23
+ 1236 00c7 0100     		.2byte	0x1
+ 1237 00c9 56       		.byte	0x56
+ 1238 00ca 00000000 		.4byte	0
+ 1239 00ce 00000000 		.4byte	0
+ 1240              		.section	.debug_aranges,"",%progbits
+ 1241 0000 2C000000 		.4byte	0x2c
+ 1242 0004 0200     		.2byte	0x2
+ 1243 0006 00000000 		.4byte	.Ldebug_info0
+ 1244 000a 04       		.byte	0x4
+ 1245 000b 00       		.byte	0
+ 1246 000c 0000     		.2byte	0
+ 1247 000e 0000     		.2byte	0
+ 1248 0010 00000000 		.4byte	.LFB0
+ 1249 0014 1C010000 		.4byte	.LFE0-.LFB0
+ 1250 0018 00000000 		.4byte	.LFB1
+ 1251 001c 50000000 		.4byte	.LFE1-.LFB1
+ 1252 0020 00000000 		.4byte	.LFB2
+ 1253 0024 40000000 		.4byte	.LFE2-.LFB2
+ 1254 0028 00000000 		.4byte	0
+ 1255 002c 00000000 		.4byte	0
+ 1256              		.section	.debug_ranges,"",%progbits
+ 1257              	.Ldebug_ranges0:
+ 1258 0000 00000000 		.4byte	.LFB0
+ 1259 0004 1C010000 		.4byte	.LFE0
+ 1260 0008 00000000 		.4byte	.LFB1
+ 1261 000c 50000000 		.4byte	.LFE1
+ 1262 0010 00000000 		.4byte	.LFB2
+ 1263 0014 40000000 		.4byte	.LFE2
+ 1264 0018 00000000 		.4byte	0
+ 1265 001c 00000000 		.4byte	0
+ 1266              		.section	.debug_line,"",%progbits
+ 1267              	.Ldebug_line0:
+ 1268 0000 15020000 		.section	.debug_str,"MS",%progbits,1
+ 1268      0200B801 
+ 1268      00000201 
+ 1268      FB0E0D00 
+ 1268      01010101 
+ 1269              	.LASF15:
+ 1270 0000 63797374 		.ascii	"cystatus\000"
+ 1270      61747573 
+ 1270      00
+ 1271              	.LASF17:
+ 1272 0009 73697A65 		.ascii	"size_t\000"
+ 1272      5F7400
+ 1273              	.LASF48:
+ 1274 0010 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\NeoPixel\\"
+ 1274      73657273 
+ 1274      5C4E6963 
+ 1274      6B5C446F 
+ 1274      63756D65 
+ 1275 003e 4E656F50 		.ascii	"NeoPixel.cydsn\000"
+ 1275      6978656C 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 25
+
+
+ 1275      2E637964 
+ 1275      736E00
+ 1276              	.LASF33:
+ 1277 004d 4E505F4E 		.ascii	"NP_Neo_BITCNT_Start\000"
+ 1277      656F5F42 
+ 1277      4954434E 
+ 1277      545F5374 
+ 1277      61727400 
+ 1278              	.LASF41:
+ 1279 0061 4379446D 		.ascii	"CyDmaTdSetAddress\000"
+ 1279      61546453 
+ 1279      65744164 
+ 1279      64726573 
+ 1279      7300
+ 1280              	.LASF44:
+ 1281 0073 4379446D 		.ascii	"CyDmaChFree\000"
+ 1281      61436846 
+ 1281      72656500 
+ 1282              	.LASF4:
+ 1283 007f 73686F72 		.ascii	"short unsigned int\000"
+ 1283      7420756E 
+ 1283      7369676E 
+ 1283      65642069 
+ 1283      6E7400
+ 1284              	.LASF42:
+ 1285 0092 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
+ 1285      61436853 
+ 1285      6574496E 
+ 1285      69746961 
+ 1285      6C546400 
+ 1286              	.LASF37:
+ 1287 00a6 4E505F4E 		.ascii	"NP_Neo_ONTime_WritePeriod\000"
+ 1287      656F5F4F 
+ 1287      4E54696D 
+ 1287      655F5772 
+ 1287      69746550 
+ 1288              	.LASF38:
+ 1289 00c0 4E505F44 		.ascii	"NP_DMA_DmaInitialize\000"
+ 1289      4D415F44 
+ 1289      6D61496E 
+ 1289      69746961 
+ 1289      6C697A65 
+ 1290              	.LASF23:
+ 1291 00d5 66437963 		.ascii	"fCyclesOn\000"
+ 1291      6C65734F 
+ 1291      6E00
+ 1292              	.LASF50:
+ 1293 00df 4379446D 		.ascii	"CyDmaTdAllocate\000"
+ 1293      61546441 
+ 1293      6C6C6F63 
+ 1293      61746500 
+ 1294              	.LASF24:
+ 1295 00ef 66437963 		.ascii	"fCyclesOff\000"
+ 1295      6C65734F 
+ 1295      666600
+ 1296              	.LASF13:
+ 1297 00fa 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 26
+
+
+ 1297      7400
+ 1298              	.LASF25:
+ 1299 0100 4E505F55 		.ascii	"NP_Update\000"
+ 1299      70646174 
+ 1299      6500
+ 1300              	.LASF2:
+ 1301 010a 756E7369 		.ascii	"unsigned char\000"
+ 1301      676E6564 
+ 1301      20636861 
+ 1301      7200
+ 1302              	.LASF16:
+ 1303 0118 72656738 		.ascii	"reg8\000"
+ 1303      00
+ 1304              	.LASF31:
+ 1305 011d 4E505F67 		.ascii	"NP_g_pFrameBuffer\000"
+ 1305      5F704672 
+ 1305      616D6542 
+ 1305      75666665 
+ 1305      7200
+ 1306              	.LASF40:
+ 1307 012f 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
+ 1307      61546453 
+ 1307      6574436F 
+ 1307      6E666967 
+ 1307      75726174 
+ 1308              	.LASF6:
+ 1309 0147 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1309      20756E73 
+ 1309      69676E65 
+ 1309      6420696E 
+ 1309      7400
+ 1310              	.LASF10:
+ 1311 0159 75696E74 		.ascii	"uint8\000"
+ 1311      3800
+ 1312              	.LASF32:
+ 1313 015f 4E505F67 		.ascii	"NP_g_nFrameBufferSize\000"
+ 1313      5F6E4672 
+ 1313      616D6542 
+ 1313      75666665 
+ 1313      7253697A 
+ 1314              	.LASF22:
+ 1315 0175 66437963 		.ascii	"fCyclesTotal\000"
+ 1315      6C657354 
+ 1315      6F74616C 
+ 1315      00
+ 1316              	.LASF30:
+ 1317 0182 4E505F67 		.ascii	"NP_g_bOwnsBuffer\000"
+ 1317      5F624F77 
+ 1317      6E734275 
+ 1317      66666572 
+ 1317      00
+ 1318              	.LASF0:
+ 1319 0193 646F7562 		.ascii	"double\000"
+ 1319      6C6500
+ 1320              	.LASF29:
+ 1321 019a 4E505F67 		.ascii	"NP_g_nDMA_TD\000"
+ 1321      5F6E444D 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 27
+
+
+ 1321      415F5444 
+ 1321      00
+ 1322              	.LASF43:
+ 1323 01a7 4379446D 		.ascii	"CyDmaChEnable\000"
+ 1323      61436845 
+ 1323      6E61626C 
+ 1323      6500
+ 1324              	.LASF11:
+ 1325 01b5 75696E74 		.ascii	"uint16\000"
+ 1325      313600
+ 1326              	.LASF49:
+ 1327 01bc 4E505F53 		.ascii	"NP_Start\000"
+ 1327      74617274 
+ 1327      00
+ 1328              	.LASF12:
+ 1329 01c5 75696E74 		.ascii	"uint32\000"
+ 1329      333200
+ 1330              	.LASF45:
+ 1331 01cc 4379446D 		.ascii	"CyDmaTdFree\000"
+ 1331      61546446 
+ 1331      72656500 
+ 1332              	.LASF9:
+ 1333 01d8 756E7369 		.ascii	"unsigned int\000"
+ 1333      676E6564 
+ 1333      20696E74 
+ 1333      00
+ 1334              	.LASF47:
+ 1335 01e5 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\NP_funcs.c\000"
+ 1335      6E657261 
+ 1335      7465645F 
+ 1335      536F7572 
+ 1335      63655C50 
+ 1336              	.LASF8:
+ 1337 0209 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1337      206C6F6E 
+ 1337      6720756E 
+ 1337      7369676E 
+ 1337      65642069 
+ 1338              	.LASF46:
+ 1339 0220 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1339      4320342E 
+ 1339      392E3320 
+ 1339      32303135 
+ 1339      30333033 
+ 1340 0253 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1340      20726576 
+ 1340      6973696F 
+ 1340      6E203232 
+ 1340      31323230 
+ 1341 0286 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1341      66756E63 
+ 1341      74696F6E 
+ 1341      2D736563 
+ 1341      74696F6E 
+ 1342              	.LASF20:
+ 1343 02ae 70427566 		.ascii	"pBuffer\000"
+ 1343      66657200 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 28
+
+
+ 1344              	.LASF36:
+ 1345 02b6 4E505F4E 		.ascii	"NP_Neo_OFFTime_WritePeriod\000"
+ 1345      656F5F4F 
+ 1345      46465469 
+ 1345      6D655F57 
+ 1345      72697465 
+ 1346              	.LASF18:
+ 1347 02d1 73697A65 		.ascii	"sizetype\000"
+ 1347      74797065 
+ 1347      00
+ 1348              	.LASF51:
+ 1349 02da 66726565 		.ascii	"free\000"
+ 1349      00
+ 1350              	.LASF7:
+ 1351 02df 6C6F6E67 		.ascii	"long long int\000"
+ 1351      206C6F6E 
+ 1351      6720696E 
+ 1351      7400
+ 1352              	.LASF14:
+ 1353 02ed 63686172 		.ascii	"char\000"
+ 1353      00
+ 1354              	.LASF34:
+ 1355 02f2 4E505F4E 		.ascii	"NP_Neo_ONTime_Start\000"
+ 1355      656F5F4F 
+ 1355      4E54696D 
+ 1355      655F5374 
+ 1355      61727400 
+ 1356              	.LASF28:
+ 1357 0306 4E505F67 		.ascii	"NP_g_nDMA_Chan\000"
+ 1357      5F6E444D 
+ 1357      415F4368 
+ 1357      616E00
+ 1358              	.LASF3:
+ 1359 0315 73686F72 		.ascii	"short int\000"
+ 1359      7420696E 
+ 1359      7400
+ 1360              	.LASF35:
+ 1361 031f 4E505F4E 		.ascii	"NP_Neo_OFFTime_Start\000"
+ 1361      656F5F4F 
+ 1361      46465469 
+ 1361      6D655F53 
+ 1361      74617274 
+ 1362              	.LASF26:
+ 1363 0334 4E505F53 		.ascii	"NP_Stop\000"
+ 1363      746F7000 
+ 1364              	.LASF5:
+ 1365 033c 6C6F6E67 		.ascii	"long int\000"
+ 1365      20696E74 
+ 1365      00
+ 1366              	.LASF19:
+ 1367 0345 6E4E756D 		.ascii	"nNumberOfNeopixels\000"
+ 1367      6265724F 
+ 1367      664E656F 
+ 1367      70697865 
+ 1367      6C7300
+ 1368              	.LASF21:
+ 1369 0358 66537065 		.ascii	"fSpeedMHz\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccGbuigH.s 			page 29
+
+
+ 1369      65644D48 
+ 1369      7A00
+ 1370              	.LASF1:
+ 1371 0362 7369676E 		.ascii	"signed char\000"
+ 1371      65642063 
+ 1371      68617200 
+ 1372              	.LASF27:
+ 1373 036e 4E505F67 		.ascii	"NP_g_nNumberOfPixels\000"
+ 1373      5F6E4E75 
+ 1373      6D626572 
+ 1373      4F665069 
+ 1373      78656C73 
+ 1374              	.LASF39:
+ 1375 0383 6D616C6C 		.ascii	"malloc\000"
+ 1375      6F6300
+ 1376              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,1497 @@
+##################################################################### 
+                    Table of Contents
+===================================================================== 
+	1::Clock Frequency Summary
+	2::Clock Relationship Summary
+	3::Datasheet Report
+		3.1::Setup to Clock
+		3.2::Clock to Out
+		3.3::Pad to Pad
+	4::Path Details for Clock Frequency Summary
+		4.1::Critical Path Report for Clock_1
+	5::Path Details for Clock Relationship Summary
+		5.1::Critical Path Report for (Clock_1:R vs. Clock_1:R)
+===================================================================== 
+                    End of Table of Contents
+##################################################################### 
+
+##################################################################### 
+                    1::Clock Frequency Summary
+===================================================================== 
+Number of clocks: 6
+Clock: Clock_1       | Frequency: 43.25 MHz  | Target: 12.75 MHz  | 
+Clock: CyBUS_CLK     | N/A                   | Target: 51.00 MHz  | 
+Clock: CyILO         | N/A                   | Target: 0.00 MHz   | 
+Clock: CyIMO         | N/A                   | Target: 3.00 MHz   | 
+Clock: CyMASTER_CLK  | N/A                   | Target: 51.00 MHz  | 
+Clock: CyPLL_OUT     | N/A                   | Target: 51.00 MHz  | 
+
+ =====================================================================
+                    End of Clock Frequency Summary
+ #####################################################################
+
+
+ #####################################################################
+                    2::Clock Relationship Summary
+ =====================================================================
+
+Launch Clock  Capture Clock  Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
+------------  -------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
+Clock_1       Clock_1        78431.4          55311       N/A              N/A         N/A              N/A         N/A              N/A         
+
+ =====================================================================
+                    End of Clock Relationship Summary
+ #####################################################################
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+3.1::Setup to Clock                     
+-------------------                     
+
+Port Name  Setup to Clk  Clock Name:Phase  
+---------  ------------  ----------------  
+
+
+-----------------------3.2::Clock to Out
+----------------------------------------
+
+Port Name    Clock to Out  Clock Name:Phase  
+-----------  ------------  ----------------  
+Data(0)_PAD  30521         Clock_1:R         
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Source)  Port Name (Destination)  Delay  
+------------------  -----------------------  -----  
+
+===================================================================== 
+                    End of Datasheet Report
+##################################################################### 
+##################################################################### 
+                    4::Path Details for Clock Frequency Summary
+===================================================================== 
+4.1::Critical Path Report for Clock_1
+*************************************
+Clock: Clock_1
+Frequency: 43.25 MHz | Target: 12.75 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:CurrentBit\/main_4
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 55311p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       19611
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           19611
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                       model name     delay     AT  slack  edge  Fanout
+-----------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q         macrocell6      1250   1250  55311  RISE       1
+\NP:Neo:DPTH_select_2\/main_0  macrocell5      3260   4510  55311  RISE       1
+\NP:Neo:DPTH_select_2\/q       macrocell5      3350   7860  55311  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_2     datapathcell1   2309  10169  55311  RISE       1
+\NP:Neo:DPTH:u0\/so_comb       datapathcell1   7120  17289  55311  RISE       1
+\NP:Neo:CurrentBit\/main_4     macrocell9      2322  19611  55311  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Frequency Summary
+##################################################################### 
+
+
+##################################################################### 
+                    5::Path Details for Clock Relationship Summary
+===================================================================== 
+
+5.1::Critical Path Report for (Clock_1:R vs. Clock_1:R)
+*******************************************************
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:CurrentBit\/main_4
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 55311p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       19611
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           19611
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                       model name     delay     AT  slack  edge  Fanout
+-----------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q         macrocell6      1250   1250  55311  RISE       1
+\NP:Neo:DPTH_select_2\/main_0  macrocell5      3260   4510  55311  RISE       1
+\NP:Neo:DPTH_select_2\/q       macrocell5      3350   7860  55311  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_2     datapathcell1   2309  10169  55311  RISE       1
+\NP:Neo:DPTH:u0\/so_comb       datapathcell1   7120  17289  55311  RISE       1
+\NP:Neo:CurrentBit\/main_4     macrocell9      2322  19611  55311  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Relationship Summary
+##################################################################### 
+
+##################################################################### 
+                    Detailed Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:CurrentBit\/main_4
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 55311p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       19611
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           19611
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                       model name     delay     AT  slack  edge  Fanout
+-----------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q         macrocell6      1250   1250  55311  RISE       1
+\NP:Neo:DPTH_select_2\/main_0  macrocell5      3260   4510  55311  RISE       1
+\NP:Neo:DPTH_select_2\/q       macrocell5      3350   7860  55311  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_2     datapathcell1   2309  10169  55311  RISE       1
+\NP:Neo:DPTH:u0\/so_comb       datapathcell1   7120  17289  55311  RISE       1
+\NP:Neo:CurrentBit\/main_4     macrocell9      2322  19611  55311  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:BITCNT:Counter7\/enable
+Capture Clock  : \NP:Neo:BITCNT:Counter7\/clock
+Path slack     : 61232p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -4060
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74371
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       13139
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           13139
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q                    macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/main_2  macrocell3    3402   4652  61232  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/q       macrocell3    3350   8002  61232  RISE       1
+\NP:Neo:BITCNT:Counter7\/enable           count7cell    5137  13139  61232  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:BITCNT:Counter7\/clock                             count7cell          0      0  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:ONTime:Counter7\/load
+Capture Clock  : \NP:Neo:ONTime:Counter7\/clock
+Path slack     : 61650p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -5360
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 73071
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11421
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11421
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q                    macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/main_2  macrocell3    3402   4652  61232  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/q       macrocell3    3350   8002  61232  RISE       1
+\NP:Neo:ONTime:Counter7\/load             count7cell    3419  11421  61650  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:ONTime:Counter7\/clock                             count7cell          0      0  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:OFFTime:Counter7\/load
+Capture Clock  : \NP:Neo:OFFTime:Counter7\/clock
+Path slack     : 61653p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -5360
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 73071
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11419
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11419
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q                    macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/main_2  macrocell3    3402   4652  61232  RISE       1
+\NP:Neo:ReloadPulsewidthCounters\/q       macrocell3    3350   8002  61232  RISE       1
+\NP:Neo:OFFTime:Counter7\/load            count7cell    3416  11419  61653  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:OFFTime:Counter7\/clock                            count7cell          0      0  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:OFFTime:Counter7\/enable
+Capture Clock  : \NP:Neo:OFFTime:Counter7\/clock
+Path slack     : 61681p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -4060
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74371
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12690
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12690
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q                    macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:EnablePulseWidthCounters\/main_2  macrocell4    3402   4652  61681  RISE       1
+\NP:Neo:EnablePulseWidthCounters\/q       macrocell4    3350   8002  61681  RISE       1
+\NP:Neo:OFFTime:Counter7\/enable          count7cell    4688  12690  61681  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:OFFTime:Counter7\/clock                            count7cell          0      0  RISE       1
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:DPTH:u0\/cs_addr_2
+Capture Clock  : \NP:Neo:DPTH:u0\/clock
+Path slack     : 61973p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -6290
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 72141
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       10169
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           10169
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                       model name     delay     AT  slack  edge  Fanout
+-----------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q         macrocell6      1250   1250  55311  RISE       1
+\NP:Neo:DPTH_select_2\/main_0  macrocell5      3260   4510  55311  RISE       1
+\NP:Neo:DPTH_select_2\/q       macrocell5      3350   7860  55311  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_2     datapathcell1   2309  10169  61973  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:BITCNT:Counter7\/load
+Capture Clock  : \NP:Neo:BITCNT:Counter7\/clock
+Path slack     : 62134p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -5360
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 73071
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       10937
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           10937
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                       model name   delay     AT  slack  edge  Fanout
+-----------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q         macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:LoadCounter\/main_2    macrocell2    3439   4689  62134  RISE       1
+\NP:Neo:LoadCounter\/q         macrocell2    3350   8039  62134  RISE       1
+\NP:Neo:BITCNT:Counter7\/load  count7cell    2898  10937  62134  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:BITCNT:Counter7\/clock                             count7cell          0      0  RISE       1
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:ONTime:Counter7\/enable
+Capture Clock  : \NP:Neo:ONTime:Counter7\/clock
+Path slack     : 63054p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -4060
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74371
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       11318
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           11318
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                                  model name   delay     AT  slack  edge  Fanout
+----------------------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q                    macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:EnablePulseWidthCounters\/main_2  macrocell4    3402   4652  61681  RISE       1
+\NP:Neo:EnablePulseWidthCounters\/q       macrocell4    3350   8002  61681  RISE       1
+\NP:Neo:ONTime:Counter7\/enable           count7cell    3315  11318  63054  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:ONTime:Counter7\/clock                             count7cell          0      0  RISE       1
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:DPTH:u0\/cs_addr_0
+Capture Clock  : \NP:Neo:DPTH:u0\/clock
+Path slack     : 67310p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -6290
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 72141
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4831
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4831
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                    model name     delay     AT  slack  edge  Fanout
+--------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q      macrocell8      1250   1250  60648  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_0  datapathcell1   3581   4831  67310  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_1\/q
+Path End       : \NP:Neo:DPTH:u0\/cs_addr_1
+Capture Clock  : \NP:Neo:DPTH:u0\/clock
+Path slack     : 67511p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -6290
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 72141
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4630
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4630
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+Data path
+pin name                    model name     delay     AT  slack  edge  Fanout
+--------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_1\/q      macrocell7      1250   1250  55492  RISE       1
+\NP:Neo:DPTH:u0\/cs_addr_1  datapathcell1   3380   4630  67511  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:BITCNT:Counter7\/tc
+Path End       : \NP:Neo:MainState_0\/main_8
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 68449p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       6472
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           6472
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:BITCNT:Counter7\/clock                             count7cell          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:BITCNT:Counter7\/tc  count7cell    2050   2050  68449  RISE       1
+\NP:Neo:MainState_0\/main_8  macrocell8    4422   6472  68449  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:BITCNT:Counter7\/tc
+Path End       : \NP:Neo:MainState_1\/main_4
+Capture Clock  : \NP:Neo:MainState_1\/clock_0
+Path slack     : 69009p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5913
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5913
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:BITCNT:Counter7\/clock                             count7cell          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:BITCNT:Counter7\/tc  count7cell    2050   2050  68449  RISE       1
+\NP:Neo:MainState_1\/main_4  macrocell7    3863   5913  69009  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+
+
+++++ Path 13 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:DPTH:u0\/f0_blk_stat_comb
+Path End       : \NP:Neo:MainState_0\/main_7
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 69030p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5891
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5891
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+Data path
+pin name                           model name     delay     AT  slack  edge  Fanout
+---------------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:DPTH:u0\/f0_blk_stat_comb  datapathcell1   3580   3580  69030  RISE       1
+\NP:Neo:MainState_0\/main_7        macrocell8      2311   5891  69030  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 14 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:DPTH:u0\/z1_comb
+Path End       : \NP:Neo:MainState_2\/main_3
+Capture Clock  : \NP:Neo:MainState_2\/clock_0
+Path slack     : 70089p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4832
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4832
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+Data path
+pin name                     model name     delay     AT  slack  edge  Fanout
+---------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:DPTH:u0\/z1_comb     datapathcell1   2220   2220  70089  RISE       1
+\NP:Neo:MainState_2\/main_3  macrocell6      2612   4832  70089  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+
+
+++++ Path 15 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:DPTH:u0\/z1_comb
+Path End       : \NP:Neo:MainState_0\/main_6
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70089p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4832
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4832
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+Data path
+pin name                     model name     delay     AT  slack  edge  Fanout
+---------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:DPTH:u0\/z1_comb     datapathcell1   2220   2220  70089  RISE       1
+\NP:Neo:MainState_0\/main_6  macrocell8      2612   4832  70089  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:DPTH:u0\/z1_comb
+Path End       : \NP:Neo:MainState_1\/main_3
+Capture Clock  : \NP:Neo:MainState_1\/clock_0
+Path slack     : 70100p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4821
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4821
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:DPTH:u0\/clock                                     datapathcell1       0      0  RISE       1
+
+Data path
+pin name                     model name     delay     AT  slack  edge  Fanout
+---------------------------  -------------  -----  -----  -----  ----  ------
+\NP:Neo:DPTH:u0\/z1_comb     datapathcell1   2220   2220  70089  RISE       1
+\NP:Neo:MainState_1\/main_3  macrocell7      2601   4821  70100  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+
+
+++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:CurrentBit\/main_2
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 70101p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4821
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4821
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                    model name   delay     AT  slack  edge  Fanout
+--------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q      macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:CurrentBit\/main_2  macrocell9    3571   4821  70101  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:MainState_2\/main_2
+Capture Clock  : \NP:Neo:MainState_2\/clock_0
+Path slack     : 70232p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4689
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4689
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q       macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:MainState_2\/main_2  macrocell6    3439   4689  70232  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+
+
+++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:MainState_0\/main_2
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70232p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4689
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4689
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q       macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:MainState_0\/main_2  macrocell8    3439   4689  70232  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 20 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_0\/q
+Path End       : \NP:Neo:MainState_1\/main_2
+Capture Clock  : \NP:Neo:MainState_1\/clock_0
+Path slack     : 70269p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4652
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4652
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_0\/q       macrocell8    1250   1250  60648  RISE       1
+\NP:Neo:MainState_1\/main_2  macrocell7    3402   4652  70269  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+
+
+++++ Path 21 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_1\/q
+Path End       : \NP:Neo:CurrentBit\/main_1
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 70297p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4624
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4624
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+Data path
+pin name                    model name   delay     AT  slack  edge  Fanout
+--------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_1\/q      macrocell7    1250   1250  55492  RISE       1
+\NP:Neo:CurrentBit\/main_1  macrocell9    3374   4624  70297  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+++++ Path 22 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_1\/q
+Path End       : \NP:Neo:MainState_1\/main_1
+Capture Clock  : \NP:Neo:MainState_1\/clock_0
+Path slack     : 70297p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4624
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4624
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_1\/q       macrocell7    1250   1250  55492  RISE       1
+\NP:Neo:MainState_1\/main_1  macrocell7    3374   4624  70297  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+
+
+++++ Path 23 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:CurrentBit\/main_0
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 70399p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4523
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4523
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                    model name   delay     AT  slack  edge  Fanout
+--------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q      macrocell6    1250   1250  55311  RISE       1
+\NP:Neo:CurrentBit\/main_0  macrocell9    3273   4523  70399  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+
+++++ Path 24 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:MainState_2\/main_0
+Capture Clock  : \NP:Neo:MainState_2\/clock_0
+Path slack     : 70412p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4510
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4510
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q       macrocell6    1250   1250  55311  RISE       1
+\NP:Neo:MainState_2\/main_0  macrocell6    3260   4510  70412  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+
+
+++++ Path 25 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:MainState_0\/main_0
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70412p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4510
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4510
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q       macrocell6    1250   1250  55311  RISE       1
+\NP:Neo:MainState_0\/main_0  macrocell8    3260   4510  70412  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 26 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_2\/q
+Path End       : \NP:Neo:MainState_1\/main_0
+Capture Clock  : \NP:Neo:MainState_1\/clock_0
+Path slack     : 70414p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4508
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4508
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_2\/q       macrocell6    1250   1250  55311  RISE       1
+\NP:Neo:MainState_1\/main_0  macrocell7    3258   4508  70414  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+
+
+++++ Path 27 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:ONTime:Counter7\/tc
+Path End       : \NP:Neo:MainState_0\/main_3
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70543p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4378
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4378
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:ONTime:Counter7\/clock                             count7cell          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:ONTime:Counter7\/tc  count7cell    2050   2050  70543  RISE       1
+\NP:Neo:MainState_0\/main_3  macrocell8    2328   4378  70543  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 28 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:OFFTime:Counter7\/tc
+Path End       : \NP:Neo:MainState_0\/main_5
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70548p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4373
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4373
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:OFFTime:Counter7\/clock                            count7cell          0      0  RISE       1
+
+Data path
+pin name                      model name   delay     AT  slack  edge  Fanout
+----------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:OFFTime:Counter7\/tc  count7cell    2050   2050  70548  RISE       1
+\NP:Neo:MainState_0\/main_5   macrocell8    2323   4373  70548  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 29 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_1\/q
+Path End       : \NP:Neo:MainState_2\/main_1
+Capture Clock  : \NP:Neo:MainState_2\/clock_0
+Path slack     : 70593p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4328
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4328
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_1\/q       macrocell7    1250   1250  55492  RISE       1
+\NP:Neo:MainState_2\/main_1  macrocell6    3078   4328  70593  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_2\/clock_0                               macrocell6          0      0  RISE       1
+
+
+
+++++ Path 30 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:MainState_1\/q
+Path End       : \NP:Neo:MainState_0\/main_1
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 70593p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4328
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4328
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_1\/clock_0                               macrocell7          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:MainState_1\/q       macrocell7    1250   1250  55492  RISE       1
+\NP:Neo:MainState_0\/main_1  macrocell8    3078   4328  70593  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 31 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:CurrentBit\/q
+Path End       : \NP:Neo:MainState_0\/main_4
+Capture Clock  : \NP:Neo:MainState_0\/clock_0
+Path slack     : 71372p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3550
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3550
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT  slack  edge  Fanout
+---------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:CurrentBit\/q        macrocell9    1250   1250  71372  RISE       1
+\NP:Neo:MainState_0\/main_4  macrocell8    2300   3550  71372  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:MainState_0\/clock_0                               macrocell8          0      0  RISE       1
+
+
+
+++++ Path 32 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \NP:Neo:CurrentBit\/q
+Path End       : \NP:Neo:CurrentBit\/main_3
+Capture Clock  : \NP:Neo:CurrentBit\/clock_0
+Path slack     : 71384p
+
+Capture Clock Arrival Time                         0
++ Clock path delay                                 0
++ Cycle adjust (Clock_1:R#1 vs. Clock_1:R#2)   78431
+- Setup time                                   -3510
+--------------------------------------------   ----- 
+End-of-path required time (ps)                 74921
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3538
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3538
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+Data path
+pin name                    model name   delay     AT  slack  edge  Fanout
+--------------------------  -----------  -----  -----  -----  ----  ------
+\NP:Neo:CurrentBit\/q       macrocell9    1250   1250  71372  RISE       1
+\NP:Neo:CurrentBit\/main_3  macrocell9    2288   3538  71384  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\NP:Neo:CurrentBit\/clock_0                                macrocell9          0      0  RISE       1
+
+
+===================================================================== 
+                    End of Detailed Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+

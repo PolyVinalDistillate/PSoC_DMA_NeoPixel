@@ -1,0 +1,1304 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Neo_BITCNT_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Neo_BITCNT_1_Init,"ax",%progbits
+  19              		.align	2
+  20              		.global	Neo_BITCNT_1_Init
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Neo_BITCNT_1_Init, %function
+  24              	Neo_BITCNT_1_Init:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Neo_BITCNT_1.c"
+   1:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * File Name: Neo_BITCNT_1.c
+   3:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Version 1.0
+   4:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+   5:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This file provides source code for the Count7 component's API.
+   7:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+   8:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Note:
+   9:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  10:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  17:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** #include "Neo_BITCNT_1.h"
+  18:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** #include "CyLib.h"
+  19:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  20:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  21:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** uint8 Neo_BITCNT_1_initVar = 0u;
+  22:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  23:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  24:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_Init
+  26:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+  27:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  28:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+  29:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Initializes or restores the component according to the parameter editor
+  30:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  settings.
+  31:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+  33:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+  34:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  35:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+  36:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+  37:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  38:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Theory:
+  39:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  It is not necessary to call Count7_Init() because the Count7_Start() API
+  40:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  calls this function and is the preferred method to begin component
+  41:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  operation.
+  42:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  43:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+  44:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_Init(void) 
+  45:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+  27              		.loc 1 45 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  46:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     /* Set the initial period value from parameter editor */
+  47:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_PERIOD_REG = Neo_BITCNT_1_INITIAL_PERIOD;
+  32              		.loc 1 47 0
+  33 0000 0622     		movs	r2, #6
+  34 0002 014B     		ldr	r3, .L2
+  35 0004 1A70     		strb	r2, [r3]
+  36 0006 7047     		bx	lr
+  37              	.L3:
+  38              		.align	2
+  39              	.L2:
+  40 0008 8A640040 		.word	1073767562
+  41              		.cfi_endproc
+  42              	.LFE0:
+  43              		.size	Neo_BITCNT_1_Init, .-Neo_BITCNT_1_Init
+  44              		.section	.text.Neo_BITCNT_1_Enable,"ax",%progbits
+  45              		.align	2
+  46              		.global	Neo_BITCNT_1_Enable
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	Neo_BITCNT_1_Enable, %function
+  50              	Neo_BITCNT_1_Enable:
+  51              	.LFB1:
+  48:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+  49:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  50:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  51:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+  52:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_Enable
+  53:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+  54:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  55:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+  56:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Enables the software enable of the counter.
+  57:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  58:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+  59:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+  60:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  61:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+  62:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+  63:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 3
+
+
+  64:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Theory:
+  65:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  It is not necessary to call Count7_Enable() because the Count7_Start() API
+  66:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  calls this function, which is the preferred method to begin component
+  67:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  operation.
+  68:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This API performs modification of auxiliary control register which is a
+  69:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  shared resource so it is required to disable interrupts until the
+  70:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  modification will complete.
+  71:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  72:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_Enable(void) 
+  74:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+  52              		.loc 1 74 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 08B5     		push	{r3, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 3, -8
+  59              		.cfi_offset 14, -4
+  75:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     uint8 interruptState;
+  76:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  77:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     interruptState = CyEnterCriticalSection();
+  60              		.loc 1 77 0
+  61 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  62              	.LVL0:
+  78:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     /* Set the counter start bit in auxiliary control. If routed enable
+  79:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     * isn't used then this will immediately star the Count7 operation.
+  80:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     */
+  81:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_AUX_CONTROL_REG |= Neo_BITCNT_1_COUNTER_START;
+  63              		.loc 1 81 0
+  64 0006 044A     		ldr	r2, .L6
+  65 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  66 000a 43F02003 		orr	r3, r3, #32
+  67 000e 1370     		strb	r3, [r2]
+  82:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  83:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     CyExitCriticalSection(interruptState);
+  68              		.loc 1 83 0
+  69 0010 FFF7FEFF 		bl	CyExitCriticalSection
+  70              	.LVL1:
+  71 0014 08BD     		pop	{r3, pc}
+  72              	.L7:
+  73 0016 00BF     		.align	2
+  74              	.L6:
+  75 0018 9A640040 		.word	1073767578
+  76              		.cfi_endproc
+  77              	.LFE1:
+  78              		.size	Neo_BITCNT_1_Enable, .-Neo_BITCNT_1_Enable
+  79              		.section	.text.Neo_BITCNT_1_Start,"ax",%progbits
+  80              		.align	2
+  81              		.global	Neo_BITCNT_1_Start
+  82              		.thumb
+  83              		.thumb_func
+  84              		.type	Neo_BITCNT_1_Start, %function
+  85              	Neo_BITCNT_1_Start:
+  86              	.LFB2:
+  84:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+  85:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 4
+
+
+  86:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+  87:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+  88:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_Start
+  89:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+  90:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  91:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+  92:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Performs all of the required initialization for the component and enables
+  93:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  the counter. The first time the routine is executed, the period is set as
+  94:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  configured in the customizer. When called to restart the counter following a
+  95:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Count7_Stop() call, the current period value is retained.
+  96:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+  97:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+  98:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None.
+  99:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 100:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Global Variables:
+ 101:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Neo_BITCNT_1_initVar - global variable.
+ 102:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 103:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 104:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None.
+ 105:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 106:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 107:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_Start(void) 
+ 108:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+  87              		.loc 1 108 0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 08B5     		push	{r3, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 3, -8
+  94              		.cfi_offset 14, -4
+ 109:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     /* If not initialized then perform initialization */
+ 110:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     if(Neo_BITCNT_1_initVar == 0u)
+  95              		.loc 1 110 0
+  96 0002 054B     		ldr	r3, .L11
+  97 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  98 0006 23B9     		cbnz	r3, .L9
+ 111:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     {
+ 112:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****         Neo_BITCNT_1_Init();
+  99              		.loc 1 112 0
+ 100 0008 FFF7FEFF 		bl	Neo_BITCNT_1_Init
+ 101              	.LVL2:
+ 113:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****         Neo_BITCNT_1_initVar = 1u;
+ 102              		.loc 1 113 0
+ 103 000c 0122     		movs	r2, #1
+ 104 000e 024B     		ldr	r3, .L11
+ 105 0010 1A70     		strb	r2, [r3]
+ 106              	.L9:
+ 114:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     }
+ 115:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 116:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     /* Enable Count7 */
+ 117:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_Enable();
+ 107              		.loc 1 117 0
+ 108 0012 FFF7FEFF 		bl	Neo_BITCNT_1_Enable
+ 109              	.LVL3:
+ 110 0016 08BD     		pop	{r3, pc}
+ 111              	.L12:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 5
+
+
+ 112              		.align	2
+ 113              	.L11:
+ 114 0018 00000000 		.word	.LANCHOR0
+ 115              		.cfi_endproc
+ 116              	.LFE2:
+ 117              		.size	Neo_BITCNT_1_Start, .-Neo_BITCNT_1_Start
+ 118              		.section	.text.Neo_BITCNT_1_Stop,"ax",%progbits
+ 119              		.align	2
+ 120              		.global	Neo_BITCNT_1_Stop
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.type	Neo_BITCNT_1_Stop, %function
+ 124              	Neo_BITCNT_1_Stop:
+ 125              	.LFB3:
+ 118:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 119:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 120:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 121:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+ 122:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_Stop
+ 123:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+ 124:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 125:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+ 126:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  Disables the software enable of the counter.
+ 127:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 128:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+ 129:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 130:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 131:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 132:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 133:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 134:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 135:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_Stop(void) 
+ 136:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+ 126              		.loc 1 136 0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 08B5     		push	{r3, lr}
+ 131              		.cfi_def_cfa_offset 8
+ 132              		.cfi_offset 3, -8
+ 133              		.cfi_offset 14, -4
+ 137:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     uint8 interruptState;
+ 138:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 139:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     interruptState = CyEnterCriticalSection();
+ 134              		.loc 1 139 0
+ 135 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 136              	.LVL4:
+ 140:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     /* Clear the counter start bit in auxiliary control. */
+ 141:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_AUX_CONTROL_REG &= (uint8) ~((uint8) Neo_BITCNT_1_COUNTER_START);
+ 137              		.loc 1 141 0
+ 138 0006 044A     		ldr	r2, .L15
+ 139 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 140 000a 03F0DF03 		and	r3, r3, #223
+ 141 000e 1370     		strb	r3, [r2]
+ 142:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 143:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     CyExitCriticalSection(interruptState);
+ 142              		.loc 1 143 0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 6
+
+
+ 143 0010 FFF7FEFF 		bl	CyExitCriticalSection
+ 144              	.LVL5:
+ 145 0014 08BD     		pop	{r3, pc}
+ 146              	.L16:
+ 147 0016 00BF     		.align	2
+ 148              	.L15:
+ 149 0018 9A640040 		.word	1073767578
+ 150              		.cfi_endproc
+ 151              	.LFE3:
+ 152              		.size	Neo_BITCNT_1_Stop, .-Neo_BITCNT_1_Stop
+ 153              		.section	.text.Neo_BITCNT_1_WriteCounter,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	Neo_BITCNT_1_WriteCounter
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	Neo_BITCNT_1_WriteCounter, %function
+ 159              	Neo_BITCNT_1_WriteCounter:
+ 160              	.LFB4:
+ 144:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 145:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 146:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 147:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+ 148:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_WriteCounter
+ 149:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+ 150:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 151:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+ 152:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This function writes the counter directly. The counter should be disabled
+ 153:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  before calling this function.
+ 154:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 155:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+ 156:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  count - Value to be written to counter.
+ 157:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 158:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 159:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 160:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 161:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 162:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_WriteCounter(uint8 count) 
+ 163:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+ 161              		.loc 1 163 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166              	.LVL6:
+ 164:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_COUNT_REG = (count & Neo_BITCNT_1_COUNT_7BIT_MASK);
+ 167              		.loc 1 164 0
+ 168 0000 00F07F00 		and	r0, r0, #127
+ 169              	.LVL7:
+ 170 0004 014B     		ldr	r3, .L18
+ 171 0006 1870     		strb	r0, [r3]
+ 172 0008 7047     		bx	lr
+ 173              	.L19:
+ 174 000a 00BF     		.align	2
+ 175              	.L18:
+ 176 000c 7A640040 		.word	1073767546
+ 177              		.cfi_endproc
+ 178              	.LFE4:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 7
+
+
+ 179              		.size	Neo_BITCNT_1_WriteCounter, .-Neo_BITCNT_1_WriteCounter
+ 180              		.section	.text.Neo_BITCNT_1_ReadCounter,"ax",%progbits
+ 181              		.align	2
+ 182              		.global	Neo_BITCNT_1_ReadCounter
+ 183              		.thumb
+ 184              		.thumb_func
+ 185              		.type	Neo_BITCNT_1_ReadCounter, %function
+ 186              	Neo_BITCNT_1_ReadCounter:
+ 187              	.LFB5:
+ 165:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 166:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 167:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 168:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+ 169:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_ReadCounter
+ 170:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+ 171:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 172:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+ 173:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This function reads the counter value.
+ 174:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 175:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+ 176:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 177:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 178:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 179:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 180:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 181:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 182:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** uint8 Neo_BITCNT_1_ReadCounter(void) 
+ 183:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+ 188              		.loc 1 183 0
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192              		@ link register save eliminated.
+ 184:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     return(Neo_BITCNT_1_COUNT_REG & Neo_BITCNT_1_COUNT_7BIT_MASK);
+ 193              		.loc 1 184 0
+ 194 0000 024B     		ldr	r3, .L21
+ 195 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 185:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 196              		.loc 1 185 0
+ 197 0004 00F07F00 		and	r0, r0, #127
+ 198 0008 7047     		bx	lr
+ 199              	.L22:
+ 200 000a 00BF     		.align	2
+ 201              	.L21:
+ 202 000c 7A640040 		.word	1073767546
+ 203              		.cfi_endproc
+ 204              	.LFE5:
+ 205              		.size	Neo_BITCNT_1_ReadCounter, .-Neo_BITCNT_1_ReadCounter
+ 206              		.section	.text.Neo_BITCNT_1_WritePeriod,"ax",%progbits
+ 207              		.align	2
+ 208              		.global	Neo_BITCNT_1_WritePeriod
+ 209              		.thumb
+ 210              		.thumb_func
+ 211              		.type	Neo_BITCNT_1_WritePeriod, %function
+ 212              	Neo_BITCNT_1_WritePeriod:
+ 213              	.LFB6:
+ 186:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 8
+
+
+ 187:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 188:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+ 189:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_WritePeriod
+ 190:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+ 191:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 192:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+ 193:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This function writes the period register. The actual period is one greater
+ 194:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  than the value in the period register since the counting sequence starts
+ 195:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  with the period register and counts down to 0 inclusive. The period of the
+ 196:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  counter output does not change until the counter is reloaded following the
+ 197:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  terminal count value of 0 or due to a hardware load signal.
+ 198:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 199:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+ 200:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  period - Period value to be written.
+ 201:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 202:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 203:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 204:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 205:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 206:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** void Neo_BITCNT_1_WritePeriod(uint8 period) 
+ 207:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+ 214              		.loc 1 207 0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		@ link register save eliminated.
+ 219              	.LVL8:
+ 208:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     Neo_BITCNT_1_PERIOD_REG = period;
+ 220              		.loc 1 208 0
+ 221 0000 014B     		ldr	r3, .L24
+ 222 0002 1870     		strb	r0, [r3]
+ 223 0004 7047     		bx	lr
+ 224              	.L25:
+ 225 0006 00BF     		.align	2
+ 226              	.L24:
+ 227 0008 8A640040 		.word	1073767562
+ 228              		.cfi_endproc
+ 229              	.LFE6:
+ 230              		.size	Neo_BITCNT_1_WritePeriod, .-Neo_BITCNT_1_WritePeriod
+ 231              		.section	.text.Neo_BITCNT_1_ReadPeriod,"ax",%progbits
+ 232              		.align	2
+ 233              		.global	Neo_BITCNT_1_ReadPeriod
+ 234              		.thumb
+ 235              		.thumb_func
+ 236              		.type	Neo_BITCNT_1_ReadPeriod, %function
+ 237              	Neo_BITCNT_1_ReadPeriod:
+ 238              	.LFB7:
+ 209:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 210:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 211:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** 
+ 212:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** /*******************************************************************************
+ 213:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Function Name: Neo_BITCNT_1_ReadPeriod
+ 214:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** ********************************************************************************
+ 215:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 216:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Summary:
+ 217:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  This function reads the period register.
+ 218:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 9
+
+
+ 219:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Parameters:
+ 220:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  None
+ 221:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 222:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** * Return:
+ 223:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *  uint8 - Current period value.
+ 224:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *
+ 225:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** *******************************************************************************/
+ 226:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** uint8 Neo_BITCNT_1_ReadPeriod(void) 
+ 227:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** {
+ 239              		.loc 1 227 0
+ 240              		.cfi_startproc
+ 241              		@ args = 0, pretend = 0, frame = 0
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243              		@ link register save eliminated.
+ 228:.\Generated_Source\PSoC5/Neo_BITCNT_1.c ****     return(Neo_BITCNT_1_PERIOD_REG);
+ 244              		.loc 1 228 0
+ 245 0000 014B     		ldr	r3, .L27
+ 246 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 229:.\Generated_Source\PSoC5/Neo_BITCNT_1.c **** }
+ 247              		.loc 1 229 0
+ 248 0004 7047     		bx	lr
+ 249              	.L28:
+ 250 0006 00BF     		.align	2
+ 251              	.L27:
+ 252 0008 8A640040 		.word	1073767562
+ 253              		.cfi_endproc
+ 254              	.LFE7:
+ 255              		.size	Neo_BITCNT_1_ReadPeriod, .-Neo_BITCNT_1_ReadPeriod
+ 256              		.global	Neo_BITCNT_1_initVar
+ 257              		.bss
+ 258              		.set	.LANCHOR0,. + 0
+ 259              		.type	Neo_BITCNT_1_initVar, %object
+ 260              		.size	Neo_BITCNT_1_initVar, 1
+ 261              	Neo_BITCNT_1_initVar:
+ 262 0000 00       		.space	1
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 266              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 267              		.section	.debug_info,"",%progbits
+ 268              	.Ldebug_info0:
+ 269 0000 E2010000 		.4byte	0x1e2
+ 270 0004 0400     		.2byte	0x4
+ 271 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 272 000a 04       		.byte	0x4
+ 273 000b 01       		.uleb128 0x1
+ 274 000c 53010000 		.4byte	.LASF25
+ 275 0010 01       		.byte	0x1
+ 276 0011 B4000000 		.4byte	.LASF26
+ 277 0015 1A000000 		.4byte	.LASF27
+ 278 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 279 001d 00000000 		.4byte	0
+ 280 0021 00000000 		.4byte	.Ldebug_line0
+ 281 0025 02       		.uleb128 0x2
+ 282 0026 01       		.byte	0x1
+ 283 0027 06       		.byte	0x6
+ 284 0028 8B020000 		.4byte	.LASF0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 10
+
+
+ 285 002c 02       		.uleb128 0x2
+ 286 002d 01       		.byte	0x1
+ 287 002e 08       		.byte	0x8
+ 288 002f A6000000 		.4byte	.LASF1
+ 289 0033 02       		.uleb128 0x2
+ 290 0034 02       		.byte	0x2
+ 291 0035 05       		.byte	0x5
+ 292 0036 64020000 		.4byte	.LASF2
+ 293 003a 02       		.uleb128 0x2
+ 294 003b 02       		.byte	0x2
+ 295 003c 07       		.byte	0x7
+ 296 003d 64000000 		.4byte	.LASF3
+ 297 0041 02       		.uleb128 0x2
+ 298 0042 04       		.byte	0x4
+ 299 0043 05       		.byte	0x5
+ 300 0044 82020000 		.4byte	.LASF4
+ 301 0048 02       		.uleb128 0x2
+ 302 0049 04       		.byte	0x4
+ 303 004a 07       		.byte	0x7
+ 304 004b 09010000 		.4byte	.LASF5
+ 305 004f 02       		.uleb128 0x2
+ 306 0050 08       		.byte	0x8
+ 307 0051 05       		.byte	0x5
+ 308 0052 51020000 		.4byte	.LASF6
+ 309 0056 02       		.uleb128 0x2
+ 310 0057 08       		.byte	0x8
+ 311 0058 07       		.byte	0x7
+ 312 0059 8F000000 		.4byte	.LASF7
+ 313 005d 03       		.uleb128 0x3
+ 314 005e 04       		.byte	0x4
+ 315 005f 05       		.byte	0x5
+ 316 0060 696E7400 		.ascii	"int\000"
+ 317 0064 02       		.uleb128 0x2
+ 318 0065 04       		.byte	0x4
+ 319 0066 07       		.byte	0x7
+ 320 0067 F8010000 		.4byte	.LASF8
+ 321 006b 04       		.uleb128 0x4
+ 322 006c 1B010000 		.4byte	.LASF12
+ 323 0070 02       		.byte	0x2
+ 324 0071 C2       		.byte	0xc2
+ 325 0072 2C000000 		.4byte	0x2c
+ 326 0076 02       		.uleb128 0x2
+ 327 0077 04       		.byte	0x4
+ 328 0078 04       		.byte	0x4
+ 329 0079 89000000 		.4byte	.LASF9
+ 330 007d 02       		.uleb128 0x2
+ 331 007e 08       		.byte	0x8
+ 332 007f 04       		.byte	0x4
+ 333 0080 21010000 		.4byte	.LASF10
+ 334 0084 02       		.uleb128 0x2
+ 335 0085 01       		.byte	0x1
+ 336 0086 08       		.byte	0x8
+ 337 0087 5F020000 		.4byte	.LASF11
+ 338 008b 05       		.uleb128 0x5
+ 339 008c DC000000 		.4byte	.LASF13
+ 340 0090 02       		.byte	0x2
+ 341 0091 6C01     		.2byte	0x16c
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 11
+
+
+ 342 0093 97000000 		.4byte	0x97
+ 343 0097 06       		.uleb128 0x6
+ 344 0098 6B000000 		.4byte	0x6b
+ 345 009c 02       		.uleb128 0x2
+ 346 009d 04       		.byte	0x4
+ 347 009e 07       		.byte	0x7
+ 348 009f 48020000 		.4byte	.LASF14
+ 349 00a3 07       		.uleb128 0x7
+ 350 00a4 77000000 		.4byte	.LASF28
+ 351 00a8 01       		.byte	0x1
+ 352 00a9 2C       		.byte	0x2c
+ 353 00aa 00000000 		.4byte	.LFB0
+ 354 00ae 0C000000 		.4byte	.LFE0-.LFB0
+ 355 00b2 01       		.uleb128 0x1
+ 356 00b3 9C       		.byte	0x9c
+ 357 00b4 08       		.uleb128 0x8
+ 358 00b5 6E020000 		.4byte	.LASF15
+ 359 00b9 01       		.byte	0x1
+ 360 00ba 49       		.byte	0x49
+ 361 00bb 00000000 		.4byte	.LFB1
+ 362 00bf 1C000000 		.4byte	.LFE1-.LFB1
+ 363 00c3 01       		.uleb128 0x1
+ 364 00c4 9C       		.byte	0x9c
+ 365 00c5 EB000000 		.4byte	0xeb
+ 366 00c9 09       		.uleb128 0x9
+ 367 00ca FA000000 		.4byte	.LASF18
+ 368 00ce 01       		.byte	0x1
+ 369 00cf 4B       		.byte	0x4b
+ 370 00d0 6B000000 		.4byte	0x6b
+ 371 00d4 00000000 		.4byte	.LLST0
+ 372 00d8 0A       		.uleb128 0xa
+ 373 00d9 06000000 		.4byte	.LVL0
+ 374 00dd CD010000 		.4byte	0x1cd
+ 375 00e1 0A       		.uleb128 0xa
+ 376 00e2 14000000 		.4byte	.LVL1
+ 377 00e6 D8010000 		.4byte	0x1d8
+ 378 00ea 00       		.byte	0
+ 379 00eb 08       		.uleb128 0x8
+ 380 00ec 97020000 		.4byte	.LASF16
+ 381 00f0 01       		.byte	0x1
+ 382 00f1 6B       		.byte	0x6b
+ 383 00f2 00000000 		.4byte	.LFB2
+ 384 00f6 1C000000 		.4byte	.LFE2-.LFB2
+ 385 00fa 01       		.uleb128 0x1
+ 386 00fb 9C       		.byte	0x9c
+ 387 00fc 13010000 		.4byte	0x113
+ 388 0100 0A       		.uleb128 0xa
+ 389 0101 0C000000 		.4byte	.LVL2
+ 390 0105 A3000000 		.4byte	0xa3
+ 391 0109 0A       		.uleb128 0xa
+ 392 010a 16000000 		.4byte	.LVL3
+ 393 010e B4000000 		.4byte	0xb4
+ 394 0112 00       		.byte	0
+ 395 0113 08       		.uleb128 0x8
+ 396 0114 28010000 		.4byte	.LASF17
+ 397 0118 01       		.byte	0x1
+ 398 0119 87       		.byte	0x87
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 12
+
+
+ 399 011a 00000000 		.4byte	.LFB3
+ 400 011e 1C000000 		.4byte	.LFE3-.LFB3
+ 401 0122 01       		.uleb128 0x1
+ 402 0123 9C       		.byte	0x9c
+ 403 0124 4A010000 		.4byte	0x14a
+ 404 0128 09       		.uleb128 0x9
+ 405 0129 FA000000 		.4byte	.LASF18
+ 406 012d 01       		.byte	0x1
+ 407 012e 89       		.byte	0x89
+ 408 012f 6B000000 		.4byte	0x6b
+ 409 0133 13000000 		.4byte	.LLST1
+ 410 0137 0A       		.uleb128 0xa
+ 411 0138 06000000 		.4byte	.LVL4
+ 412 013c CD010000 		.4byte	0x1cd
+ 413 0140 0A       		.uleb128 0xa
+ 414 0141 14000000 		.4byte	.LVL5
+ 415 0145 D8010000 		.4byte	0x1d8
+ 416 0149 00       		.byte	0
+ 417 014a 08       		.uleb128 0x8
+ 418 014b 00000000 		.4byte	.LASF19
+ 419 014f 01       		.byte	0x1
+ 420 0150 A2       		.byte	0xa2
+ 421 0151 00000000 		.4byte	.LFB4
+ 422 0155 10000000 		.4byte	.LFE4-.LFB4
+ 423 0159 01       		.uleb128 0x1
+ 424 015a 9C       		.byte	0x9c
+ 425 015b 6F010000 		.4byte	0x16f
+ 426 015f 0B       		.uleb128 0xb
+ 427 0160 57000000 		.4byte	.LASF21
+ 428 0164 01       		.byte	0x1
+ 429 0165 A2       		.byte	0xa2
+ 430 0166 6B000000 		.4byte	0x6b
+ 431 016a 26000000 		.4byte	.LLST2
+ 432 016e 00       		.byte	0
+ 433 016f 0C       		.uleb128 0xc
+ 434 0170 E1000000 		.4byte	.LASF23
+ 435 0174 01       		.byte	0x1
+ 436 0175 B6       		.byte	0xb6
+ 437 0176 6B000000 		.4byte	0x6b
+ 438 017a 00000000 		.4byte	.LFB5
+ 439 017e 10000000 		.4byte	.LFE5-.LFB5
+ 440 0182 01       		.uleb128 0x1
+ 441 0183 9C       		.byte	0x9c
+ 442 0184 08       		.uleb128 0x8
+ 443 0185 3A010000 		.4byte	.LASF20
+ 444 0189 01       		.byte	0x1
+ 445 018a CE       		.byte	0xce
+ 446 018b 00000000 		.4byte	.LFB6
+ 447 018f 0C000000 		.4byte	.LFE6-.LFB6
+ 448 0193 01       		.uleb128 0x1
+ 449 0194 9C       		.byte	0x9c
+ 450 0195 A7010000 		.4byte	0x1a7
+ 451 0199 0D       		.uleb128 0xd
+ 452 019a 5D000000 		.4byte	.LASF22
+ 453 019e 01       		.byte	0x1
+ 454 019f CE       		.byte	0xce
+ 455 01a0 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 13
+
+
+ 456 01a4 01       		.uleb128 0x1
+ 457 01a5 50       		.byte	0x50
+ 458 01a6 00       		.byte	0
+ 459 01a7 0C       		.uleb128 0xc
+ 460 01a8 30020000 		.4byte	.LASF24
+ 461 01ac 01       		.byte	0x1
+ 462 01ad E2       		.byte	0xe2
+ 463 01ae 6B000000 		.4byte	0x6b
+ 464 01b2 00000000 		.4byte	.LFB7
+ 465 01b6 0C000000 		.4byte	.LFE7-.LFB7
+ 466 01ba 01       		.uleb128 0x1
+ 467 01bb 9C       		.byte	0x9c
+ 468 01bc 0E       		.uleb128 0xe
+ 469 01bd 05020000 		.4byte	.LASF29
+ 470 01c1 01       		.byte	0x1
+ 471 01c2 15       		.byte	0x15
+ 472 01c3 6B000000 		.4byte	0x6b
+ 473 01c7 05       		.uleb128 0x5
+ 474 01c8 03       		.byte	0x3
+ 475 01c9 00000000 		.4byte	Neo_BITCNT_1_initVar
+ 476 01cd 0F       		.uleb128 0xf
+ 477 01ce E1010000 		.4byte	.LASF30
+ 478 01d2 03       		.byte	0x3
+ 479 01d3 7E       		.byte	0x7e
+ 480 01d4 6B000000 		.4byte	0x6b
+ 481 01d8 10       		.uleb128 0x10
+ 482 01d9 1A020000 		.4byte	.LASF31
+ 483 01dd 03       		.byte	0x3
+ 484 01de 7F       		.byte	0x7f
+ 485 01df 11       		.uleb128 0x11
+ 486 01e0 6B000000 		.4byte	0x6b
+ 487 01e4 00       		.byte	0
+ 488 01e5 00       		.byte	0
+ 489              		.section	.debug_abbrev,"",%progbits
+ 490              	.Ldebug_abbrev0:
+ 491 0000 01       		.uleb128 0x1
+ 492 0001 11       		.uleb128 0x11
+ 493 0002 01       		.byte	0x1
+ 494 0003 25       		.uleb128 0x25
+ 495 0004 0E       		.uleb128 0xe
+ 496 0005 13       		.uleb128 0x13
+ 497 0006 0B       		.uleb128 0xb
+ 498 0007 03       		.uleb128 0x3
+ 499 0008 0E       		.uleb128 0xe
+ 500 0009 1B       		.uleb128 0x1b
+ 501 000a 0E       		.uleb128 0xe
+ 502 000b 55       		.uleb128 0x55
+ 503 000c 17       		.uleb128 0x17
+ 504 000d 11       		.uleb128 0x11
+ 505 000e 01       		.uleb128 0x1
+ 506 000f 10       		.uleb128 0x10
+ 507 0010 17       		.uleb128 0x17
+ 508 0011 00       		.byte	0
+ 509 0012 00       		.byte	0
+ 510 0013 02       		.uleb128 0x2
+ 511 0014 24       		.uleb128 0x24
+ 512 0015 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 14
+
+
+ 513 0016 0B       		.uleb128 0xb
+ 514 0017 0B       		.uleb128 0xb
+ 515 0018 3E       		.uleb128 0x3e
+ 516 0019 0B       		.uleb128 0xb
+ 517 001a 03       		.uleb128 0x3
+ 518 001b 0E       		.uleb128 0xe
+ 519 001c 00       		.byte	0
+ 520 001d 00       		.byte	0
+ 521 001e 03       		.uleb128 0x3
+ 522 001f 24       		.uleb128 0x24
+ 523 0020 00       		.byte	0
+ 524 0021 0B       		.uleb128 0xb
+ 525 0022 0B       		.uleb128 0xb
+ 526 0023 3E       		.uleb128 0x3e
+ 527 0024 0B       		.uleb128 0xb
+ 528 0025 03       		.uleb128 0x3
+ 529 0026 08       		.uleb128 0x8
+ 530 0027 00       		.byte	0
+ 531 0028 00       		.byte	0
+ 532 0029 04       		.uleb128 0x4
+ 533 002a 16       		.uleb128 0x16
+ 534 002b 00       		.byte	0
+ 535 002c 03       		.uleb128 0x3
+ 536 002d 0E       		.uleb128 0xe
+ 537 002e 3A       		.uleb128 0x3a
+ 538 002f 0B       		.uleb128 0xb
+ 539 0030 3B       		.uleb128 0x3b
+ 540 0031 0B       		.uleb128 0xb
+ 541 0032 49       		.uleb128 0x49
+ 542 0033 13       		.uleb128 0x13
+ 543 0034 00       		.byte	0
+ 544 0035 00       		.byte	0
+ 545 0036 05       		.uleb128 0x5
+ 546 0037 16       		.uleb128 0x16
+ 547 0038 00       		.byte	0
+ 548 0039 03       		.uleb128 0x3
+ 549 003a 0E       		.uleb128 0xe
+ 550 003b 3A       		.uleb128 0x3a
+ 551 003c 0B       		.uleb128 0xb
+ 552 003d 3B       		.uleb128 0x3b
+ 553 003e 05       		.uleb128 0x5
+ 554 003f 49       		.uleb128 0x49
+ 555 0040 13       		.uleb128 0x13
+ 556 0041 00       		.byte	0
+ 557 0042 00       		.byte	0
+ 558 0043 06       		.uleb128 0x6
+ 559 0044 35       		.uleb128 0x35
+ 560 0045 00       		.byte	0
+ 561 0046 49       		.uleb128 0x49
+ 562 0047 13       		.uleb128 0x13
+ 563 0048 00       		.byte	0
+ 564 0049 00       		.byte	0
+ 565 004a 07       		.uleb128 0x7
+ 566 004b 2E       		.uleb128 0x2e
+ 567 004c 00       		.byte	0
+ 568 004d 3F       		.uleb128 0x3f
+ 569 004e 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 15
+
+
+ 570 004f 03       		.uleb128 0x3
+ 571 0050 0E       		.uleb128 0xe
+ 572 0051 3A       		.uleb128 0x3a
+ 573 0052 0B       		.uleb128 0xb
+ 574 0053 3B       		.uleb128 0x3b
+ 575 0054 0B       		.uleb128 0xb
+ 576 0055 27       		.uleb128 0x27
+ 577 0056 19       		.uleb128 0x19
+ 578 0057 11       		.uleb128 0x11
+ 579 0058 01       		.uleb128 0x1
+ 580 0059 12       		.uleb128 0x12
+ 581 005a 06       		.uleb128 0x6
+ 582 005b 40       		.uleb128 0x40
+ 583 005c 18       		.uleb128 0x18
+ 584 005d 9742     		.uleb128 0x2117
+ 585 005f 19       		.uleb128 0x19
+ 586 0060 00       		.byte	0
+ 587 0061 00       		.byte	0
+ 588 0062 08       		.uleb128 0x8
+ 589 0063 2E       		.uleb128 0x2e
+ 590 0064 01       		.byte	0x1
+ 591 0065 3F       		.uleb128 0x3f
+ 592 0066 19       		.uleb128 0x19
+ 593 0067 03       		.uleb128 0x3
+ 594 0068 0E       		.uleb128 0xe
+ 595 0069 3A       		.uleb128 0x3a
+ 596 006a 0B       		.uleb128 0xb
+ 597 006b 3B       		.uleb128 0x3b
+ 598 006c 0B       		.uleb128 0xb
+ 599 006d 27       		.uleb128 0x27
+ 600 006e 19       		.uleb128 0x19
+ 601 006f 11       		.uleb128 0x11
+ 602 0070 01       		.uleb128 0x1
+ 603 0071 12       		.uleb128 0x12
+ 604 0072 06       		.uleb128 0x6
+ 605 0073 40       		.uleb128 0x40
+ 606 0074 18       		.uleb128 0x18
+ 607 0075 9742     		.uleb128 0x2117
+ 608 0077 19       		.uleb128 0x19
+ 609 0078 01       		.uleb128 0x1
+ 610 0079 13       		.uleb128 0x13
+ 611 007a 00       		.byte	0
+ 612 007b 00       		.byte	0
+ 613 007c 09       		.uleb128 0x9
+ 614 007d 34       		.uleb128 0x34
+ 615 007e 00       		.byte	0
+ 616 007f 03       		.uleb128 0x3
+ 617 0080 0E       		.uleb128 0xe
+ 618 0081 3A       		.uleb128 0x3a
+ 619 0082 0B       		.uleb128 0xb
+ 620 0083 3B       		.uleb128 0x3b
+ 621 0084 0B       		.uleb128 0xb
+ 622 0085 49       		.uleb128 0x49
+ 623 0086 13       		.uleb128 0x13
+ 624 0087 02       		.uleb128 0x2
+ 625 0088 17       		.uleb128 0x17
+ 626 0089 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 16
+
+
+ 627 008a 00       		.byte	0
+ 628 008b 0A       		.uleb128 0xa
+ 629 008c 898201   		.uleb128 0x4109
+ 630 008f 00       		.byte	0
+ 631 0090 11       		.uleb128 0x11
+ 632 0091 01       		.uleb128 0x1
+ 633 0092 31       		.uleb128 0x31
+ 634 0093 13       		.uleb128 0x13
+ 635 0094 00       		.byte	0
+ 636 0095 00       		.byte	0
+ 637 0096 0B       		.uleb128 0xb
+ 638 0097 05       		.uleb128 0x5
+ 639 0098 00       		.byte	0
+ 640 0099 03       		.uleb128 0x3
+ 641 009a 0E       		.uleb128 0xe
+ 642 009b 3A       		.uleb128 0x3a
+ 643 009c 0B       		.uleb128 0xb
+ 644 009d 3B       		.uleb128 0x3b
+ 645 009e 0B       		.uleb128 0xb
+ 646 009f 49       		.uleb128 0x49
+ 647 00a0 13       		.uleb128 0x13
+ 648 00a1 02       		.uleb128 0x2
+ 649 00a2 17       		.uleb128 0x17
+ 650 00a3 00       		.byte	0
+ 651 00a4 00       		.byte	0
+ 652 00a5 0C       		.uleb128 0xc
+ 653 00a6 2E       		.uleb128 0x2e
+ 654 00a7 00       		.byte	0
+ 655 00a8 3F       		.uleb128 0x3f
+ 656 00a9 19       		.uleb128 0x19
+ 657 00aa 03       		.uleb128 0x3
+ 658 00ab 0E       		.uleb128 0xe
+ 659 00ac 3A       		.uleb128 0x3a
+ 660 00ad 0B       		.uleb128 0xb
+ 661 00ae 3B       		.uleb128 0x3b
+ 662 00af 0B       		.uleb128 0xb
+ 663 00b0 27       		.uleb128 0x27
+ 664 00b1 19       		.uleb128 0x19
+ 665 00b2 49       		.uleb128 0x49
+ 666 00b3 13       		.uleb128 0x13
+ 667 00b4 11       		.uleb128 0x11
+ 668 00b5 01       		.uleb128 0x1
+ 669 00b6 12       		.uleb128 0x12
+ 670 00b7 06       		.uleb128 0x6
+ 671 00b8 40       		.uleb128 0x40
+ 672 00b9 18       		.uleb128 0x18
+ 673 00ba 9742     		.uleb128 0x2117
+ 674 00bc 19       		.uleb128 0x19
+ 675 00bd 00       		.byte	0
+ 676 00be 00       		.byte	0
+ 677 00bf 0D       		.uleb128 0xd
+ 678 00c0 05       		.uleb128 0x5
+ 679 00c1 00       		.byte	0
+ 680 00c2 03       		.uleb128 0x3
+ 681 00c3 0E       		.uleb128 0xe
+ 682 00c4 3A       		.uleb128 0x3a
+ 683 00c5 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 17
+
+
+ 684 00c6 3B       		.uleb128 0x3b
+ 685 00c7 0B       		.uleb128 0xb
+ 686 00c8 49       		.uleb128 0x49
+ 687 00c9 13       		.uleb128 0x13
+ 688 00ca 02       		.uleb128 0x2
+ 689 00cb 18       		.uleb128 0x18
+ 690 00cc 00       		.byte	0
+ 691 00cd 00       		.byte	0
+ 692 00ce 0E       		.uleb128 0xe
+ 693 00cf 34       		.uleb128 0x34
+ 694 00d0 00       		.byte	0
+ 695 00d1 03       		.uleb128 0x3
+ 696 00d2 0E       		.uleb128 0xe
+ 697 00d3 3A       		.uleb128 0x3a
+ 698 00d4 0B       		.uleb128 0xb
+ 699 00d5 3B       		.uleb128 0x3b
+ 700 00d6 0B       		.uleb128 0xb
+ 701 00d7 49       		.uleb128 0x49
+ 702 00d8 13       		.uleb128 0x13
+ 703 00d9 3F       		.uleb128 0x3f
+ 704 00da 19       		.uleb128 0x19
+ 705 00db 02       		.uleb128 0x2
+ 706 00dc 18       		.uleb128 0x18
+ 707 00dd 00       		.byte	0
+ 708 00de 00       		.byte	0
+ 709 00df 0F       		.uleb128 0xf
+ 710 00e0 2E       		.uleb128 0x2e
+ 711 00e1 00       		.byte	0
+ 712 00e2 3F       		.uleb128 0x3f
+ 713 00e3 19       		.uleb128 0x19
+ 714 00e4 03       		.uleb128 0x3
+ 715 00e5 0E       		.uleb128 0xe
+ 716 00e6 3A       		.uleb128 0x3a
+ 717 00e7 0B       		.uleb128 0xb
+ 718 00e8 3B       		.uleb128 0x3b
+ 719 00e9 0B       		.uleb128 0xb
+ 720 00ea 27       		.uleb128 0x27
+ 721 00eb 19       		.uleb128 0x19
+ 722 00ec 49       		.uleb128 0x49
+ 723 00ed 13       		.uleb128 0x13
+ 724 00ee 3C       		.uleb128 0x3c
+ 725 00ef 19       		.uleb128 0x19
+ 726 00f0 00       		.byte	0
+ 727 00f1 00       		.byte	0
+ 728 00f2 10       		.uleb128 0x10
+ 729 00f3 2E       		.uleb128 0x2e
+ 730 00f4 01       		.byte	0x1
+ 731 00f5 3F       		.uleb128 0x3f
+ 732 00f6 19       		.uleb128 0x19
+ 733 00f7 03       		.uleb128 0x3
+ 734 00f8 0E       		.uleb128 0xe
+ 735 00f9 3A       		.uleb128 0x3a
+ 736 00fa 0B       		.uleb128 0xb
+ 737 00fb 3B       		.uleb128 0x3b
+ 738 00fc 0B       		.uleb128 0xb
+ 739 00fd 27       		.uleb128 0x27
+ 740 00fe 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 18
+
+
+ 741 00ff 3C       		.uleb128 0x3c
+ 742 0100 19       		.uleb128 0x19
+ 743 0101 00       		.byte	0
+ 744 0102 00       		.byte	0
+ 745 0103 11       		.uleb128 0x11
+ 746 0104 05       		.uleb128 0x5
+ 747 0105 00       		.byte	0
+ 748 0106 49       		.uleb128 0x49
+ 749 0107 13       		.uleb128 0x13
+ 750 0108 00       		.byte	0
+ 751 0109 00       		.byte	0
+ 752 010a 00       		.byte	0
+ 753              		.section	.debug_loc,"",%progbits
+ 754              	.Ldebug_loc0:
+ 755              	.LLST0:
+ 756 0000 06000000 		.4byte	.LVL0
+ 757 0004 13000000 		.4byte	.LVL1-1
+ 758 0008 0100     		.2byte	0x1
+ 759 000a 50       		.byte	0x50
+ 760 000b 00000000 		.4byte	0
+ 761 000f 00000000 		.4byte	0
+ 762              	.LLST1:
+ 763 0013 06000000 		.4byte	.LVL4
+ 764 0017 13000000 		.4byte	.LVL5-1
+ 765 001b 0100     		.2byte	0x1
+ 766 001d 50       		.byte	0x50
+ 767 001e 00000000 		.4byte	0
+ 768 0022 00000000 		.4byte	0
+ 769              	.LLST2:
+ 770 0026 00000000 		.4byte	.LVL6
+ 771 002a 04000000 		.4byte	.LVL7
+ 772 002e 0100     		.2byte	0x1
+ 773 0030 50       		.byte	0x50
+ 774 0031 04000000 		.4byte	.LVL7
+ 775 0035 10000000 		.4byte	.LFE4
+ 776 0039 0400     		.2byte	0x4
+ 777 003b F3       		.byte	0xf3
+ 778 003c 01       		.uleb128 0x1
+ 779 003d 50       		.byte	0x50
+ 780 003e 9F       		.byte	0x9f
+ 781 003f 00000000 		.4byte	0
+ 782 0043 00000000 		.4byte	0
+ 783              		.section	.debug_aranges,"",%progbits
+ 784 0000 54000000 		.4byte	0x54
+ 785 0004 0200     		.2byte	0x2
+ 786 0006 00000000 		.4byte	.Ldebug_info0
+ 787 000a 04       		.byte	0x4
+ 788 000b 00       		.byte	0
+ 789 000c 0000     		.2byte	0
+ 790 000e 0000     		.2byte	0
+ 791 0010 00000000 		.4byte	.LFB0
+ 792 0014 0C000000 		.4byte	.LFE0-.LFB0
+ 793 0018 00000000 		.4byte	.LFB1
+ 794 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 795 0020 00000000 		.4byte	.LFB2
+ 796 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 797 0028 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 19
+
+
+ 798 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 799 0030 00000000 		.4byte	.LFB4
+ 800 0034 10000000 		.4byte	.LFE4-.LFB4
+ 801 0038 00000000 		.4byte	.LFB5
+ 802 003c 10000000 		.4byte	.LFE5-.LFB5
+ 803 0040 00000000 		.4byte	.LFB6
+ 804 0044 0C000000 		.4byte	.LFE6-.LFB6
+ 805 0048 00000000 		.4byte	.LFB7
+ 806 004c 0C000000 		.4byte	.LFE7-.LFB7
+ 807 0050 00000000 		.4byte	0
+ 808 0054 00000000 		.4byte	0
+ 809              		.section	.debug_ranges,"",%progbits
+ 810              	.Ldebug_ranges0:
+ 811 0000 00000000 		.4byte	.LFB0
+ 812 0004 0C000000 		.4byte	.LFE0
+ 813 0008 00000000 		.4byte	.LFB1
+ 814 000c 1C000000 		.4byte	.LFE1
+ 815 0010 00000000 		.4byte	.LFB2
+ 816 0014 1C000000 		.4byte	.LFE2
+ 817 0018 00000000 		.4byte	.LFB3
+ 818 001c 1C000000 		.4byte	.LFE3
+ 819 0020 00000000 		.4byte	.LFB4
+ 820 0024 10000000 		.4byte	.LFE4
+ 821 0028 00000000 		.4byte	.LFB5
+ 822 002c 10000000 		.4byte	.LFE5
+ 823 0030 00000000 		.4byte	.LFB6
+ 824 0034 0C000000 		.4byte	.LFE6
+ 825 0038 00000000 		.4byte	.LFB7
+ 826 003c 0C000000 		.4byte	.LFE7
+ 827 0040 00000000 		.4byte	0
+ 828 0044 00000000 		.4byte	0
+ 829              		.section	.debug_line,"",%progbits
+ 830              	.Ldebug_line0:
+ 831 0000 EC000000 		.section	.debug_str,"MS",%progbits,1
+ 831      02005600 
+ 831      00000201 
+ 831      FB0E0D00 
+ 831      01010101 
+ 832              	.LASF19:
+ 833 0000 4E656F5F 		.ascii	"Neo_BITCNT_1_WriteCounter\000"
+ 833      42495443 
+ 833      4E545F31 
+ 833      5F577269 
+ 833      7465436F 
+ 834              	.LASF27:
+ 835 001a 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\NeoPixel\\"
+ 835      73657273 
+ 835      5C4E6963 
+ 835      6B5C446F 
+ 835      63756D65 
+ 836 0048 4E656F50 		.ascii	"NeoPixel.cydsn\000"
+ 836      6978656C 
+ 836      2E637964 
+ 836      736E00
+ 837              	.LASF21:
+ 838 0057 636F756E 		.ascii	"count\000"
+ 838      7400
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 20
+
+
+ 839              	.LASF22:
+ 840 005d 70657269 		.ascii	"period\000"
+ 840      6F6400
+ 841              	.LASF3:
+ 842 0064 73686F72 		.ascii	"short unsigned int\000"
+ 842      7420756E 
+ 842      7369676E 
+ 842      65642069 
+ 842      6E7400
+ 843              	.LASF28:
+ 844 0077 4E656F5F 		.ascii	"Neo_BITCNT_1_Init\000"
+ 844      42495443 
+ 844      4E545F31 
+ 844      5F496E69 
+ 844      7400
+ 845              	.LASF9:
+ 846 0089 666C6F61 		.ascii	"float\000"
+ 846      7400
+ 847              	.LASF7:
+ 848 008f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 848      206C6F6E 
+ 848      6720756E 
+ 848      7369676E 
+ 848      65642069 
+ 849              	.LASF1:
+ 850 00a6 756E7369 		.ascii	"unsigned char\000"
+ 850      676E6564 
+ 850      20636861 
+ 850      7200
+ 851              	.LASF26:
+ 852 00b4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Neo_BITCNT_1.c\000"
+ 852      6E657261 
+ 852      7465645F 
+ 852      536F7572 
+ 852      63655C50 
+ 853              	.LASF13:
+ 854 00dc 72656738 		.ascii	"reg8\000"
+ 854      00
+ 855              	.LASF23:
+ 856 00e1 4E656F5F 		.ascii	"Neo_BITCNT_1_ReadCounter\000"
+ 856      42495443 
+ 856      4E545F31 
+ 856      5F526561 
+ 856      64436F75 
+ 857              	.LASF18:
+ 858 00fa 696E7465 		.ascii	"interruptState\000"
+ 858      72727570 
+ 858      74537461 
+ 858      746500
+ 859              	.LASF5:
+ 860 0109 6C6F6E67 		.ascii	"long unsigned int\000"
+ 860      20756E73 
+ 860      69676E65 
+ 860      6420696E 
+ 860      7400
+ 861              	.LASF12:
+ 862 011b 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 21
+
+
+ 862      3800
+ 863              	.LASF10:
+ 864 0121 646F7562 		.ascii	"double\000"
+ 864      6C6500
+ 865              	.LASF17:
+ 866 0128 4E656F5F 		.ascii	"Neo_BITCNT_1_Stop\000"
+ 866      42495443 
+ 866      4E545F31 
+ 866      5F53746F 
+ 866      7000
+ 867              	.LASF20:
+ 868 013a 4E656F5F 		.ascii	"Neo_BITCNT_1_WritePeriod\000"
+ 868      42495443 
+ 868      4E545F31 
+ 868      5F577269 
+ 868      74655065 
+ 869              	.LASF25:
+ 870 0153 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 870      4320342E 
+ 870      392E3320 
+ 870      32303135 
+ 870      30333033 
+ 871 0186 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 871      20726576 
+ 871      6973696F 
+ 871      6E203232 
+ 871      31323230 
+ 872 01b9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 872      66756E63 
+ 872      74696F6E 
+ 872      2D736563 
+ 872      74696F6E 
+ 873              	.LASF30:
+ 874 01e1 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 874      74657243 
+ 874      72697469 
+ 874      63616C53 
+ 874      65637469 
+ 875              	.LASF8:
+ 876 01f8 756E7369 		.ascii	"unsigned int\000"
+ 876      676E6564 
+ 876      20696E74 
+ 876      00
+ 877              	.LASF29:
+ 878 0205 4E656F5F 		.ascii	"Neo_BITCNT_1_initVar\000"
+ 878      42495443 
+ 878      4E545F31 
+ 878      5F696E69 
+ 878      74566172 
+ 879              	.LASF31:
+ 880 021a 43794578 		.ascii	"CyExitCriticalSection\000"
+ 880      69744372 
+ 880      69746963 
+ 880      616C5365 
+ 880      6374696F 
+ 881              	.LASF24:
+ 882 0230 4E656F5F 		.ascii	"Neo_BITCNT_1_ReadPeriod\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc5MtDl2.s 			page 22
+
+
+ 882      42495443 
+ 882      4E545F31 
+ 882      5F526561 
+ 882      64506572 
+ 883              	.LASF14:
+ 884 0248 73697A65 		.ascii	"sizetype\000"
+ 884      74797065 
+ 884      00
+ 885              	.LASF6:
+ 886 0251 6C6F6E67 		.ascii	"long long int\000"
+ 886      206C6F6E 
+ 886      6720696E 
+ 886      7400
+ 887              	.LASF11:
+ 888 025f 63686172 		.ascii	"char\000"
+ 888      00
+ 889              	.LASF2:
+ 890 0264 73686F72 		.ascii	"short int\000"
+ 890      7420696E 
+ 890      7400
+ 891              	.LASF15:
+ 892 026e 4E656F5F 		.ascii	"Neo_BITCNT_1_Enable\000"
+ 892      42495443 
+ 892      4E545F31 
+ 892      5F456E61 
+ 892      626C6500 
+ 893              	.LASF4:
+ 894 0282 6C6F6E67 		.ascii	"long int\000"
+ 894      20696E74 
+ 894      00
+ 895              	.LASF0:
+ 896 028b 7369676E 		.ascii	"signed char\000"
+ 896      65642063 
+ 896      68617200 
+ 897              	.LASF16:
+ 898 0297 4E656F5F 		.ascii	"Neo_BITCNT_1_Start\000"
+ 898      42495443 
+ 898      4E545F31 
+ 898      5F537461 
+ 898      727400
+ 899              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
